@@ -22,7 +22,7 @@ const About = () => (
           lifetime.
       </p>
       <p className="paragraph">
-          This year, 24 completely different students from Purdue University
+          This year, 24 students from Purdue University
           have come together to host an unforgettable hackathon. All the work
           that has gone into planning this event—everything from setting up the
           venue to the annoying emails that we berate your inboxes with—was
