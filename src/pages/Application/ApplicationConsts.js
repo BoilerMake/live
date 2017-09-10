@@ -70,3 +70,72 @@ export const isFirstHackathonOptions = [{
     label: 'No',
     value: false
 }];
+export const skillOptions = [{
+    label: 'android',
+    value: 'android'
+},{
+    label: 'C',
+    value: 'C'
+},{
+    label: 'css',
+    value: 'css'
+},{
+    label: 'design',
+    value: 'design'
+},{
+    label: 'go',
+    value: 'go'
+},{
+    label: 'hardware',
+    value: 'hardware'
+},{
+    label: 'html',
+    value: 'html'
+},{
+    label: 'ios',
+    value: 'ios'
+},{
+    label: 'java',
+    value: 'java'
+},{
+    label: 'js',
+    value: 'js'
+},{
+    label: 'mobile',
+    value: 'mobile'
+},{
+    label: 'nodejs',
+    value: 'nodejs'
+},{
+    label: 'obj-c',
+    value: 'obj-c'
+},{
+    label: 'php',
+    value: 'php'
+},{
+    label: 'puzzle',
+    value: 'puzzle'
+},{
+    label: 'python',
+    value: 'python'
+},{
+    label: 'ruby',
+    value: 'ruby'
+},{
+    label: 'swift',
+    value: 'swift'
+},{
+    label: 'webdev',
+    value: 'webdev'
+}];
+export const dietOptions = [
+{
+    label: 'Vegan',
+    value: 'vegan'
+}, {
+    label: 'Vegetarian',
+    value: 'vegetarian'
+}, {
+    label: 'Gluten Free',
+    value: 'glutenfree'
+}];

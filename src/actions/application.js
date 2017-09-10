@@ -31,7 +31,7 @@ function receiveApplication (json, onlyUpdateNonFormFields = false) {
     };
 }
 
-export function saveApplication(suppressToast = false) {
+export function saveApplication(suppressToast = false, isRSVPAction = false) {
     return (dispatch, getState) => {
         let data = getState().application.applicationForm;
         return apiFetch('users/me/application',
@@ -43,7 +43,10 @@ export function saveApplication(suppressToast = false) {
             .then((json) => {
                 if(json.success) {
                     if(!suppressToast) {
-                        toastr.success('Success!', json.data.message);
+                        if(isRSVPAction)
+                            toastr.success('Success!', 'Your RSVP has been saved.');
+                        else
+                            toastr.success('Success!', json.data.message);
                     }
                     //this api endpoint returns the updated application
                     dispatch(receiveApplication(json,true));

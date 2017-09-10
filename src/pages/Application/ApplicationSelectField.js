@@ -16,6 +16,10 @@ class ApplicationSelectField extends React.Component {
         }
     }
     updateValue (newValue) {
+        if(this.props.multi && newValue.split(",").length > 3) {
+            //more than 3 things selected!
+            return;
+        }
         this.setState({selectValue: newValue});
         this.props.changeApplicationFieldValue(this.props.field,newValue);
     }
@@ -24,6 +28,8 @@ class ApplicationSelectField extends React.Component {
         return (<div>
             <Select
                 simpleValue
+                multi={this.props.multi}
+                joinValues={this.props.multi}
                 options={transFormedData}
                 clearable={false}
                 name={"selected-"+this.props.field}
@@ -36,7 +42,8 @@ class ApplicationSelectField extends React.Component {
 }
 ApplicationSelectField.displayName = 'ApplicationSelectField';
 ApplicationSelectField.defaultProps = {
-    searchable: false
+    searchable: false,
+    multi: false
 };
 
 function mapStateToProps (state, ownProps) {
