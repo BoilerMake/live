@@ -50,6 +50,13 @@
       border: 2px solid $darkBlue;
     }
   }
+  .rsvp-button {
+    @extend .application-button
+  }
+  .rsvp-button-selected {
+    @extend .rsvp-button;
+    border: 2px solid $green;
+  }
 
   .submit {
       outline: none;
