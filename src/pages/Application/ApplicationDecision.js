@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ApplicationRSVPToggle from "./ApplicationRSVPToggle";
+import {dietOptions, skillOptions} from "./ApplicationConsts";
 
 class ApplicationForm extends Component {
     render () {
@@ -31,6 +32,8 @@ class ApplicationForm extends Component {
             case "walk":
                 transitMessage = <div>Well, you have it easy! BoilerMake will be happening in the Black & Gold Gyms of the CoRec on campus.</div>;
                 break;
+            default:
+              break;
         }
 
         let rsvpYes =
@@ -96,6 +99,8 @@ class ApplicationForm extends Component {
                     <p>[message]</p>
                 </div>);
                 break;
+            default:
+              break;
         }
         return (<div>
                 {decisionForm}
@@ -112,7 +117,6 @@ import {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 import ApplicationTextField from "./ApplicationTextField";
-import {dietOptions, skillOptions} from "./ApplicationConsts";
 import ApplicationSelectField from "./ApplicationSelectField";
 function mapStateToProps (state) {
     return {
