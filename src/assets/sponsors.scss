@@ -12,25 +12,33 @@
   padding: 50px 5%;
   color: white;
   .info {
-    text-align: left;
-    border-bottom: 1px solid white;
+    text-align: center;
     margin-bottom: 20px;
     h1 {
       font-family: $font-title;
-      font-weight: lighter;
     }
     h2 {
       font-family: $font-body;
       text-align: center;
-      font-weight: lighter;
     }
     p {
-      font-weight: lighter;
       font-size: 18px;
     }
     a {
       text-decoration: none;
       color: $pink;
+    }
+    .button {
+      padding: 9px 12px;
+      background: #fff;
+      border-radius: 4px;
+      display: inline-block;
+      transition: .1s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        transition: .1s ease;
+      }
     }
   }
   .logo {
@@ -45,9 +53,15 @@
     background-size: 160px;
     background-position: center center;
     background-repeat: no-repeat;
+    transition: .3s ease;
     a {
       text-decoration: none;
       cursor: pointer;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: .3s ease;
     }
   }
   .logo:nth-child(2) {

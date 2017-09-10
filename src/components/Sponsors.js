@@ -5,8 +5,7 @@ const Sponsors = () => (
   <div className="s">
     <div className="info">
       <h1>BoilerMake V Partners</h1>
-      <p>Interested in partnering at BoilerMake?</p>
-      <p>Send us a message at <a href="mailto:sponsorship@boilermake.org">sponsorship@boilermake.org</a></p>
+
     </div>
     <a href="https://www.capitalone.com" alt="capital one" className="logo" />
     <a href="https://www.ge.com/" alt="general electric" className="logo" />
@@ -19,6 +18,10 @@ const Sponsors = () => (
     <a href="http://techpoint.org/" alt="techpoint" className="logo" />
     <a href="https://www.bloomberg.com/" alt="bloomberg" className="logo" />
     <div className="info">
+      <p>Interested in partnering at BoilerMake?</p>
+      <a href="mailto:sponsorship@boilermake.org"><div className="button">
+        sponsorship@boilermake.org
+      </div></a>
       <h2>Special Thanks to</h2>
     </div>
     <a href="https://www.cs.purdue.edu/" alt="purdue cs" className="logo cs" />
