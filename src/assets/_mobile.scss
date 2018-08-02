@@ -3,3 +3,37 @@
     font-size: 40px !important;
   }
 }
+@media (max-width: 750px) {
+  .hacker-image {
+    transform: rotate(0);
+
+    &:nth-child(odd) {
+      margin-top: 20px;
+    }
+  }
+  .mobile-hide {
+    visibility: hidden;
+    height: 0;
+  }
+  .mobile-show {
+    visibility: visible;
+  }
+  .col-1 { width: 100%; }
+  .col-2 { width: 100%; }
+  .col-3 { width: 100%; }
+  .col-4 { width: 100%; }
+  .col-5 { width: 100%; }
+  .col-6 { width: 100%; }
+  .col-7 { width: 100%; }
+  .col-8 { width: 100%; }
+  .col-9 { width: 100%; }
+  .col-10 { width: 100%; }
+  .col-11 { width: 100%; }
+  .col-12 { width: 100%; }
+}
+@media (min-width: 750px) {
+  .mobile-show {
+    visibility: hidden;
+    height: 0;
+  }
+}

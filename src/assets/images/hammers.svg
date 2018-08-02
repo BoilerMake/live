@@ -1,22 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 193.5 155.2" style="enable-background:new 0 0 193.5 155.2;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#1A2A50;}
-</style>
-<title>hammers</title>
-<g id="Layer_2">
-	<g id="Layer_1-2">
-		<path class="st0" d="M134.8,96.5c-3.5-3.5-9.2-3.5-12.7,0l-8.5,8.5c-3.5,3.5-3.5,9.2,0,12.7l34.9,34.9c3.5,3.5,9.2,3.5,12.7,0
-			l8.5-8.5c3.5-3.5,3.5-9.2,0-12.7L134.8,96.5z"/>
-		<path class="st0" d="M34.3,68l8.5-8.5c3.5-3.5,9.2-3.5,12.7,0l3.2,3.2c3.5,3.5,9.1,3.5,12.6,0.1c0,0,0,0,0.1-0.1l8.5-8.4
-			c3.5-3.5,3.5-9.2,0-12.7l-3.2-3.2c-3.5-3.5-3.5-9.2,0-12.7l8.5-8.5c3.5-3.5,3.5-9.2,0-12.7c0,0,0,0,0,0l-1.6-1.7
-			c-1.7-1.7-4-2.7-6.4-2.8H42.3c-2.4,0.1-4.7,1.1-6.3,2.8L2.6,36.3c-3.5,3.5-3.5,9.2,0,12.7c0,0,0,0,0,0l19,19
-			C25.1,71.5,30.8,71.5,34.3,68C34.3,68,34.3,68,34.3,68z"/>
-		<path class="st0" d="M157.5,2.8c-1.7-1.7-3.9-2.7-6.3-2.8h-34.8c-2.4,0.1-4.7,1.1-6.3,2.8l-1.6,1.8c-3.5,3.5-3.5,9.2,0,12.7
-			l8.5,8.5c3.5,3.5,3.5,9.2,0,12.7l-93.1,93.1c-3.5,3.5-3.5,9.2,0,12.7l8.5,8.5c3.5,3.5,9.2,3.5,12.7,0l93-93.1
-			c3.5-3.5,9.2-3.5,12.7,0l8.5,8.5c3.5,3.5,9.2,3.5,12.7,0l19-19c3.5-3.5,3.5-9.2,0-12.7c0,0,0,0,0,0L157.5,2.8z"/>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg3718"
+   xml:space="preserve"
+   width="266.66666"
+   height="266.66666"
+   viewBox="0 0 266.66666 266.66666"
+   sodipodi:docname="hammers.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"><metadata
+     id="metadata3724"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+     id="defs3722"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3734"><path
+         d="M 0,300 H 300 V 0 H 0 Z"
+         id="path3732"
+         inkscape:connector-curvature="0" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3744"><path
+         d="M -60,60 H 60 V -60 H -60 Z"
+         id="path3742"
+         inkscape:connector-curvature="0" /></clipPath></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="996"
+     inkscape:window-height="767"
+     id="namedview3720"
+     showgrid="false"
+     inkscape:zoom="1.6723075"
+     inkscape:cx="100.60503"
+     inkscape:cy="119.26967"
+     inkscape:window-x="60"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3728"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" /><g
+     id="g3726"
+     inkscape:groupmode="layer"
+     inkscape:label="bm_logo"
+     transform="matrix(1.3333333,0,0,-1.3333333,-66.66667,333.33332)"><g
+       id="g3728"><g
+         id="g3730"
+         clip-path="url(#clipPath3734)"
+         style="fill:#ffffff"><g
+           id="g3736"
+           transform="matrix(1.6666666,0,0,-1.6666666,150,150)"
+           style="fill:#ffffff"><g
+             id="g3738"
+             style="fill:#ffffff"><g
+               id="g3740"
+               clip-path="url(#clipPath3744)"
+               style="fill:#ffffff"><g
+                 id="g3746"
+                 transform="translate(31.47,-9.63)"
+                 style="fill:#ffffff"><path
+                   d="m 0,0 -6.37,6.36 c -1.17,1.17 -3.07,1.17 -4.24,0 l -2.83,-2.83 c -1.17,-1.17 -3.07,-1.17 -4.24,0 l -31.11,31.12 c -1.18,1.17 -3.08,1.17 -4.25,0 l -2.83,-2.83 c -1.17,-1.17 -1.17,-3.07 0,-4.24 l 31.12,-31.12 c 1.17,-1.17 1.17,-3.07 0,-4.24 l -2.83,-2.83 c -1.17,-1.17 -1.17,-3.07 0,-4.24 l 0.53,-0.59 c 0.57,-0.56 1.33,-0.93 2.13,-0.93 h 11.65 c 0.8,0 1.56,0.37 2.12,0.93 L 0,-4.26 C 1.17,-3.1 1.17,-1.17 0,0 m -7.07,31.82 -2.83,2.83 c -1.17,1.17 -3.07,1.17 -4.25,0 L -25.81,22.98 c -1.17,-1.17 -1.17,-3.07 0,-4.24 l 2.83,-2.83 c 1.17,-1.17 3.07,-1.17 4.24,0 l 11.67,11.67 c 1.17,1.17 1.17,3.07 0,4.24 m -55.87,-36.06 11.15,-11.2 c 0.56,-0.56 1.32,-0.93 2.12,-0.93 h 11.65 c 0.8,0 1.56,0.37 2.13,0.93 l 0.53,0.56 c 1.17,1.18 1.17,3.09 0,4.26 l -2.83,2.83 c -1.17,1.17 -1.17,3.08 0,4.25 l 1.06,1.06 c 1.17,1.17 1.17,3.07 0,4.25 l -2.83,2.82 c -1.17,1.18 -3.07,1.18 -4.24,0 l -1.06,-1.06 c -1.17,-1.17 -3.07,-1.17 -4.24,0 l -2.83,2.83 c -1.17,1.17 -3.07,1.17 -4.24,0 L -62.94,0 c -1.17,-1.17 -1.17,-3.07 0,-4.24 m 31.47,-36.13 c -27.61,0 -50,22.39 -50,50 0,27.61 22.39,50 50,50 27.61,0 50,-22.39 50,-50 0,-27.61 -22.39,-50 -50,-50"
+                   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="path3748"
+                   inkscape:connector-curvature="0" /></g><g
+                 id="g3750"
+                 transform="translate(0,55)"
+                 style="fill:#ffffff"><path
+                   d="m 0,0 c -30.38,0 -55,-24.62 -55,-55 0,-30.38 24.62,-55 55,-55 30.38,0 55,24.62 55,55 C 55,-24.62 30.38,0 0,0 m 0,-115 c -33.14,0 -60,26.86 -60,60 0,33.14 26.86,60 60,60 33.14,0 60,-26.86 60,-60 0,-33.14 -26.86,-60 -60,-60"
+                   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                   id="path3752"
+                   inkscape:connector-curvature="0" /></g></g></g></g></g></g></g></svg>

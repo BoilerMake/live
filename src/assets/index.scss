@@ -1,14 +1,6 @@
-@import 'nav';
-@import 'footer';
-
-@import 'landing';
-@import 'application';
-@import 'about';
-@import 'schedule';
-@import 'announcements';
-@import 'live';
-@import 'offseason';
-
+@import 'pages';
+@import 'columns';
+@import 'uicomponents';
 @import 'mobile';
 
 html, body, #boilermake, .body {
@@ -23,29 +15,8 @@ html, body, #boilermake, .body {
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-body;
-  color: $darkBlue;
-}
-.section {
-  padding-bottom: 20px;
-  p {
-    font-size: 16px;
-  }
-}
-.fancy {
-  background: rgba(25,42,80,1);
-  background: -moz-linear-gradient(-45deg, rgba(25,42,80,1) 0%, rgba(55,40,105,1) 34%, rgba(238,42,124,1) 69%, rgba(246,149,129,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(25,42,80,1)), color-stop(34%, rgba(55,40,105,1)), color-stop(69%, rgba(238,42,124,1)), color-stop(100%, rgba(246,149,129,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(25,42,80,1) 0%, rgba(55,40,105,1) 34%, rgba(238,42,124,1) 69%, rgba(246,149,129,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(25,42,80,1) 0%, rgba(55,40,105,1) 34%, rgba(238,42,124,1) 69%, rgba(246,149,129,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(25,42,80,1) 0%, rgba(55,40,105,1) 34%, rgba(238,42,124,1) 69%, rgba(246,149,129,1) 100%);
-  background: linear-gradient(135deg, rgba(25,42,80,1) 0%, rgba(55,40,105,1) 34%, rgba(238,42,124,1) 69%, rgba(246,149,129,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192a50', endColorstr='#f69581', GradientType=1 );
-  padding: 50px 5%;
-  color: white;
-  a {
-    color:$lightBlue;
-  }
+  font-family: $font-body, Arial, -apple-system,BlinkMacSystemFont,"Segoe UI","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+  color: $black;
 }
 .none {
   display: none;
@@ -53,31 +24,23 @@ body {
 .content {
   flex: 1 0 auto;
 }
-// FONT COLORS
-.white { color: $white; }
-.pink { color: $pink; }
-.lightBlue { color: $lightBlue; }
-.darkBlue { color: $darkBlue; }
-
 // FONT OVERRIDES
 h1 { font-size: 50px; }
 @media (max-width: 480px) {
   h1 { font-size: 30px; }
 }
 h3 { font-size: 25px; }
-p {
-  font-family: $font-body;
-  font-size: 14px;
+p, ul {
+  font-family: "Helvetica Neue",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
-.pagePadded {
-  padding: 20px;
-}
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+a { text-decoration: none; }
 // FONTS
 .title { font-family: $font-title }
 
-// BACKGROUNDS
-.bgwhite { background-color: $white; }
-.bgdarkBlue { background-color: $darkBlue; }
 
 // ONE-LINERS
 .hidden { display: none; }
@@ -89,63 +52,6 @@ p {
 }
 .v-center { align-items: center; }
 .h-center { justify-content: center; }
-
-// CONTAINERS
-.page {
-  text-align: center;
-  margin: 0px auto;
-}
-.pageContainer {
-  margin: 50px 75px 0 75px;
-}
-.container {
-  display: flex;
-  width: 100%;
-}
-.fullWidthContainer {
-  max-width: 700px;
-  padding: 0 15px;
-  margin: auto;
-}
-
-// GRID
-.row:after { // Only need after to clear
-  content: ".";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-.col-6 {
-  width: 50%;
-  float: left;
-  margin: 0;
-  box-sizing: border-box;
-
-  &:first-child {
-    padding-right: 8px;
-  }
-  &:last-child {
-    padding-left: 8px;
-  }
-}
-.col-4 {
-  width: 33%;
-  float: left;
-  margin: 0;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .col-6 {
-    width: 100%;
-    &:last-child {
-      padding-left: 0;
-    }
-  }
-  .col-4 {
-    width: 100%;
-  }
-}
 
 // PADDING & MARGIN STANDARDS
 .padding { padding: 16px; }
@@ -164,22 +70,6 @@ p {
 .marginx { margin: 0 16px; }
 .marginy { margin: 16px 0; }
 
-
-.topSpacing {
-  margin-top: 20px;
-}
-.left {
-  text-align: left;
-  h1 {
-    text-align: left;
-  }
-}
-.center {
-  text-align: center;
-}
-.right {
-  text-align: right;
-}
 .btn {
   font-size: 15px;
   font-family: $font-title;

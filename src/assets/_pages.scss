@@ -1,0 +1,228 @@
+@import "vars";
+// Home
+.colorBlock {
+  width: 100%;
+  padding: 40px 0;
+  color: #fff;
+  display: block;
+
+  &.pink {
+    // background: #f25f89;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  &.orange {
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    // background: #f49762;
+  }
+}
+.home {
+  h2 {
+    font-weight: 800;
+    font-size: 30px;
+  }
+  p, ul {
+    font-size: 16px;
+    line-height: 2em;
+  }
+  ul {
+    padding-left: 16px;
+  }
+}
+.images {
+  .col-3-no-break:nth-child(odd) {
+    padding-top: 30px;
+  }
+}
+.hacker-image {
+  border-radius: '4px';
+  box-shadow: '0 0 20px rgba(0,0,0,0.2)';
+  transform: rotate(-5deg);
+
+  &:nth-child(odd) {
+    transform: rotate(5deg);
+  }
+}
+.middleBreak {
+  padding: 100px 0;
+  margin: 50px auto;
+  // clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  &.dark {
+    background-image: linear-gradient(to top, #181743 0%, #3C3A6C 100%);
+  }
+  &.light {
+    background: #FFFFFF;
+  }
+  &.home {
+    margin-top: -70px;
+    // box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+}
+@media (max-width: 780px) {
+  .middleBreak {
+    clip-path: none;
+  }
+}
+.stories {
+  position: relative;
+}
+.stories:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 35%;
+  background: #F0F7FD;
+  z-index: -1;
+}
+// Faq
+.faq {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    left: 0;
+    background: #333333;
+    z-index: -1;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.3);
+  }
+  max-width: 320px;
+  .logo {
+    max-width: 158px;
+    position: absolute;
+    z-index: -1;
+    margin-top: 0px;
+    margin-left: -193px;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  span {
+    color: $darkBlue;
+  }
+  p {
+    font-size: 16px;
+    color: $darkBlue;
+    line-height: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 4px;
+  }
+  .darkBlue {
+    color: $darkBlue;
+  }
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .outline {
+    background: $white;
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid $gray;
+  }
+  .faq-question {
+    font-weight: 400;
+    color: $darkBlue;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .faq-answer {
+    font-weight: 400;
+    margin-top: 15px;
+  }
+  .icon {
+    max-width: 20px;
+    float: right;
+    position: relative;
+    margin-top: -20px;
+  }
+  @media (min-width: 750px) {
+    max-width: 500px;
+    .logo {
+      max-width: 177px;
+      margin-top: 5px;
+      margin-left: -307px;
+    }
+
+  }
+  @media (min-width: 1080px) {
+    max-width: 800px;
+    .logo {
+      margin-top: 5px;
+      margin-left: -471px;
+    }
+  }
+
+}
+// About
+.about {
+  padding: 0 20px;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    left: 0;
+    background: #333333;
+    z-index: -1;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.3);
+  }
+}
+.paragraph {
+  font-size: 16px;
+  line-height: 1.6em;
+  color: $darkBlue;
+  max-width: 700px;
+  margin: 0px auto;
+  margin-bottom: 35px;
+}
+.fourohfour {
+  width: 100%;
+  background: linear-gradient(135deg, #1E2B50 0%, #AD2677 100%);
+  text-align: center;
+  margin-top: -90px;
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+// Day of
+.messages-inner .c_card:not(:first-child) {
+	margin: 12px 0;
+}
+
+.messages > .c_card {
+	margin: 12px 0;
+	overflow-y: auto;
+	max-height: 400px;
+}
+
+.countdown h1 {
+	margin-bottom: 0;
+}
+
+.countdown p {
+	margin-top: 0;
+}
+
+.schedule-item p {
+	line-height: 1em;
+	font-size: 20px;
+	margin-top: 0;
+}
+
+p.schedule-time {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+.text-reset {
+	text-align: left;
+}

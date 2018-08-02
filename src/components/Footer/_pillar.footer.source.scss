@@ -1,0 +1,35 @@
+@import '../../assets/tools.scss';
+
+.p-footer {
+  background: #2D2D2D;
+  color: #ffffff;
+  padding: 20px 0px;
+  font-size: 14px;
+  box-shadow: 0px 500px 0px 500px #2D2D2D;
+
+  @include max-width;
+}
+.p-footer__content {
+  display: flex;
+  margin: auto;
+}
+.p-footer__section_header {
+  font-size: 16px;
+}
+.p-footer__section_list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.p-footer__section_list_item {
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

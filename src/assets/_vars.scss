@@ -1,4 +1,4 @@
-$font-body: 'Fira Sans', sans-serif;
+$font-body: 'Futura', sans-serif;
 $font-title: 'Moon', sans-serif;
 
 $lightBlue: #04EFFB;
@@ -13,6 +13,7 @@ $lightPink: lighten($pink, 10);
 $green: #00F8BB;
 $yellow: #FFC200;
 $white: #fff;
+$black: #333333;
 
 @font-face {
   font-family: 'Moon';
@@ -33,7 +34,11 @@ $white: #fff;
        url('fonts/Moon/Moon Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
   font-weight: bold;
 }
-
+@font-face {
+  font-family: 'Futura';
+  src: url('fonts/Futura/FuturaStd-Heavy.otf') format('opentype');
+  font-weight: 800;
+}
 @font-face {
   font-family: 'Futura';
   src: url('fonts/Futura/FuturaStd-Light.otf') format('opentype');

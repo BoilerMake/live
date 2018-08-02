@@ -1,0 +1,52 @@
+@import '../../assets/tools.scss';
+
+.p-nav {
+  @include max-width;
+
+
+}
+.p-nav_content {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.p-nav__logo--hammers {
+  width: 40px;
+  height: auto;
+}
+
+.p-nav__nav_links {
+  margin-left: auto;
+}
+
+.p-nav__nav_link {
+  margin: 0 10px;
+	font-family: Futura;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+  text-decoration: none;
+	color: #fff;
+}
+
+@media screen and (max-width: 360px) {
+  .p-nav {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .p-nav__nav_links {
+    overflow-scrolling: touch;
+  }
+
+  .p-nav__nav_link {
+    margin: 0 6px;
+    font-size: 14px;
+  }
+}
