@@ -1,0 +1,6 @@
+@import '../../assets/tools.scss';
+
+.p-login {
+    @include max-width;
+    background: red;
+}
