@@ -24,12 +24,7 @@ const LoginForm = (props) => {
             <GithubLoginButton actionText="Login"/>
 
             <div className="flex margint h-center">
-              <div className="">
-                <Link to="/register">Register</Link>
-              </div>
-              <div className="marginl">
-                <Link to="/reset">Forgot your password?</Link>
-              </div>
+                <Link to="/register">Register</Link> / <Link to="/reset">Forgot your password?</Link>
             </div>
         </form>
     );
