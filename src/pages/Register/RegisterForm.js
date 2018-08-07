@@ -1,5 +1,5 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm } from 'redux-form'
 import GithubLoginButton from '../../components/GithubLoginButton'
 import { Link } from 'react-router-dom'
 import { Button, TextInput } from 'bm-kit';
