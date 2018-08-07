@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm'
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
+import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
 import './_pillar.login.source.scss';
 
@@ -44,8 +45,12 @@ class Login extends Component {
         }
         return (
             <div className="p-login">
-                <h1 className="title">Login</h1>
-                <LoginForm onSubmit={this.handleSubmit}/>
+              <div className="p-login__content">
+                <Card className="col-6">
+                  <h1>Login</h1>
+                  <LoginForm onSubmit={this.handleSubmit}/>
+                </Card>
+              </div>
             </div>
         );
     }

@@ -1,6 +1,27 @@
 @import '../../assets/tools.scss';
 
 .p-login {
-    @include max-width;
-    background: red;
+  &:after {
+    @include dark-header;
+  }
+
+  margin: $spacing_200;
+}
+
+.p-login__content {
+  @include max-width;
+
+  display: flex;
+  justify-content: center;
+}
+
+.p-login__wuth_github {
+  width: 100%;
+  background: $dark_mono;
+  padding: $spacing_50;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  color: $light_mono;
+  border-radius: 4px;
 }
