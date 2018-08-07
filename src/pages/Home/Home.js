@@ -5,6 +5,8 @@ import ImageDivider from './ImageDivider';
 import PreFooter from './Home_PreFooter';
 import Images from './images';
 
+import './_pillar.home.source.scss';
+
 const Home = () => (
   <div>
     <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">

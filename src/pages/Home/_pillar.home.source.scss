@@ -1,5 +1,5 @@
 @import '../../assets/tools.scss';
 
 .p-home__prefooter_item {
-  @import max-width: 
+  @include max-width;
 }
