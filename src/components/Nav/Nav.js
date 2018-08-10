@@ -32,20 +32,37 @@ class Nav extends Component {
           </Button>
           {showing ? (
             <div className="dropdown">
-              <nav
-                className="dropdown_list"
-                onClick={() => this.setState({ showing: !showing })}
-              >
-                <NavLink exact to="/hackers" className="p-nav__nav_link">
+              <nav className="dropdown_list">
+                <NavLink
+                  onClick={() => this.setState({ showing: !showing })}
+                  exact
+                  to="/hackers"
+                  className="p-nav__nav_link"
+                >
                   Hackers
                 </NavLink>
-                <NavLink exact to="/sponsors" className="p-nav__nav_link">
+                <NavLink
+                  onClick={() => this.setState({ showing: !showing })}
+                  exact
+                  to="/sponsors"
+                  className="p-nav__nav_link"
+                >
                   Sponsors
                 </NavLink>
-                <NavLink exact to="/about" className="p-nav__nav_link">
+                <NavLink
+                  onClick={() => this.setState({ showing: !showing })}
+                  exact
+                  to="/about"
+                  className="p-nav__nav_link"
+                >
                   About
                 </NavLink>
-                <NavLink exact to="/faq" className="p-nav__nav_link">
+                <NavLink
+                  onClick={() => this.setState({ showing: !showing })}
+                  exact
+                  to="/faq"
+                  className="p-nav__nav_link"
+                >
                   FAQ
                 </NavLink>
               </nav>
