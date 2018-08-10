@@ -3,9 +3,14 @@ import { NavLink, Link } from 'react-router-dom';
 import logo from '../../assets/images/hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
 import './_pillar.nav.source.scss';
+import { Button } from 'bm-kit';
 
 class Nav extends Component {
+  state = { showing: false };
+
   render() {
+    const { showing } = this.state;
+
     return (
       <div className="p-nav">
         <div className="p-nav_content">
@@ -18,6 +23,34 @@ class Nav extends Component {
               />
             </Link>
           </div>
+          <Button
+            className="c_button"
+            id="dropdown_button"
+            onClick={() => this.setState({ showing: !showing })}
+          >
+            Menu
+          </Button>
+          {showing ? (
+            <div className="dropdown">
+              <nav
+                className="dropdown_list"
+                onClick={() => this.setState({ showing: !showing })}
+              >
+                <NavLink exact to="/hackers" className="p-nav__nav_link">
+                  Hackers
+                </NavLink>
+                <NavLink exact to="/sponsors" className="p-nav__nav_link">
+                  Sponsors
+                </NavLink>
+                <NavLink exact to="/about" className="p-nav__nav_link">
+                  About
+                </NavLink>
+                <NavLink exact to="/faq" className="p-nav__nav_link">
+                  FAQ
+                </NavLink>
+              </nav>
+            </div>
+          ) : null}
           <nav className="p-nav__nav_links">
             <NavLink exact to="/hackers" className="p-nav__nav_link">
               Hackers
