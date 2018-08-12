@@ -1,5 +1,7 @@
-$font-body: 'Futura', sans-serif;
-$font-title: 'Moon', sans-serif;
+// $font-body: 'Futura', sans-serif;
+// $font-title: 'Moon', sans-serif;
+$font-body: sans-serif;
+$font-title: sans-serif;
 
 $lightBlue: #04EFFB;
 $lightBlue-o: rgba(4,239,251, .2);
@@ -14,38 +16,38 @@ $green: #00F8BB;
 $yellow: #FFC200;
 $white: #fff;
 $black: #333333;
-
-@font-face {
-  font-family: 'Moon';
-  src: url('fonts/Moon/Moon Light.eot'); /* IE9 Compat Modes */
-  src: url('fonts/Moon/Moon Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/Moon/Moon Light.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/Moon/Moon Light.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/Moon/Moon Light.ttf')  format('truetype'); /* Safari, Android, iOS */
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: 'Moon';
-  src: url('fonts/Moon/Moon Bold.eot'); /* IE9 Compat Modes */
-  src: url('fonts/Moon/Moon Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/Moon/Moon Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/Moon/Moon Bold.woff') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/Moon/Moon Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Futura';
-  src: url('fonts/Futura/FuturaStd-Heavy.otf') format('opentype');
-  font-weight: 800;
-}
-@font-face {
-  font-family: 'Futura';
-  src: url('fonts/Futura/FuturaStd-Light.otf') format('opentype');
-  font-weight: lighter;
-}
-@font-face {
-  font-family: 'Futura';
-  src: url('fonts/Futura/FuturaStd-Medium.otf') format('opentype');
-  font-weight: bold;
-}
+//
+// @font-face {
+//   font-family: 'Moon';
+//   src: url('fonts/Moon/Moon Light.eot'); /* IE9 Compat Modes */
+//   src: url('fonts/Moon/Moon Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('fonts/Moon/Moon Light.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('fonts/Moon/Moon Light.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('fonts/Moon/Moon Light.ttf')  format('truetype'); /* Safari, Android, iOS */
+//   font-weight: normal;
+// }
+//
+// @font-face {
+//   font-family: 'Moon';
+//   src: url('fonts/Moon/Moon Bold.eot'); /* IE9 Compat Modes */
+//   src: url('fonts/Moon/Moon Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('fonts/Moon/Moon Bold.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('fonts/Moon/Moon Bold.woff') format('woff'), /* Pretty Modern Browsers */
+//        url('fonts/Moon/Moon Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+//   font-weight: bold;
+// }
+// @font-face {
+//   font-family: 'Futura';
+//   src: url('fonts/Futura/FuturaStd-Heavy.otf') format('opentype');
+//   font-weight: 800;
+// }
+// @font-face {
+//   font-family: 'Futura';
+//   src: url('fonts/Futura/FuturaStd-Light.otf') format('opentype');
+//   font-weight: lighter;
+// }
+// @font-face {
+//   font-family: 'Futura';
+//   src: url('fonts/Futura/FuturaStd-Medium.otf') format('opentype');
+//   font-weight: bold;
+// }

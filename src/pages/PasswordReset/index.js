@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { SubmissionError } from 'redux-form'
 import { Redirect } from 'react-router-dom'
-import RequestPasswordResetForm from './RequestPasswordResetForm';
-import PerformPasswordResetForm from './PerformPasswordResetForm';
+// import RequestPasswordResetForm from './RequestPasswordResetForm';
+// import PerformPasswordResetForm from './PerformPasswordResetForm';
 import apiFetch from '../../actions';
 import '../../assets/_form.scss'
 
@@ -56,10 +56,10 @@ class PasswordReset extends Component {
         let isTokenShowing = this.props.match.params.reset_token !== undefined;
         let requestReset =(<div>
             <p>Please enter your email.</p>
-            <RequestPasswordResetForm onSubmit={this.handleRequestSubmit}/>
+            {/*<RequestPasswordResetForm onSubmit={this.handleRequestSubmit}/>*/}
         </div>);
         let performReset = (<div>
-            <PerformPasswordResetForm onSubmit={this.handlePerformSubmit}/>
+            {/*<PerformPasswordResetForm onSubmit={this.handlePerformSubmit}/>*/}
         </div>);
         return (
             <div className="login">
