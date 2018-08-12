@@ -1,5 +1,6 @@
 import cookie from 'react-cookie';
 import Hashids from 'hashids';
+import { DEBUG_MODE, GITHUB_CLIENT_ID, API_BASE_URL } from '../config';
 
 function s4() {
   return Math.floor((1 + Math.random()) * 0x10000)
