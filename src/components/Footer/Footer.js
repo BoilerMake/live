@@ -10,7 +10,7 @@ const Footer = () => (
         <h4 className="p-footer__section_header">Social</h4>
         <ul className="p-footer__section_list">
           {socialLinks.map(link => (
-            <li className="p-footer__section_list_item">
+            <li className="p-footer__section_list_item" key={link.link}>
               <a href={link.link}>{link.label}</a>
             </li>
           ))}
@@ -20,7 +20,7 @@ const Footer = () => (
         <h4 className="p-footer__section_header">Pages</h4>
         <ul className="p-footer__section_list">
           {pageLinks.map(link => (
-            <li className="p-footer__section_list_item">
+            <li className="p-footer__section_list_item" key={link.link}>
               <Link to={link.link}>{link.label}</Link>
             </li>
           ))}

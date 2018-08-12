@@ -1,0 +1,9 @@
+@import '../../assets/tools.scss';
+
+.p-github_auth {
+  @include max-width;
+
+  &:after {
+    @include dark-header;
+  }
+}

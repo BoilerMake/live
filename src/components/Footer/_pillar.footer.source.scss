@@ -1,11 +1,11 @@
 @import '../../assets/tools.scss';
 
 .p-footer {
-  background: #2D2D2D;
-  color: #ffffff;
+  background: #F3F3F3;
+  color: #000000;
   padding: 20px 0px;
   font-size: 14px;
-  box-shadow: 0px 500px 0px 500px #2D2D2D;
+  box-shadow: 0px 500px 0px 500px #F3F3F3;
 
   @include max-width;
 }
@@ -15,6 +15,7 @@
 }
 .p-footer__section_header {
   font-size: 16px;
+  font-weight: bold;
 }
 .p-footer__section_list {
   list-style-type: none;
