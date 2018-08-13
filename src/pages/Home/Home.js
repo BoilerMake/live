@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import MailChimpSignup from './MailChimpSignup';
+import BM6Grabber from './BM6-Grabber';
 import ImageDivider from './ImageDivider';
 import PreFooter from './Home_PreFooter';
 import Images from './images';
@@ -9,6 +10,7 @@ import './_pillar.home.source.scss';
 
 const Home = () => (
   <div>
+    <BM6Grabber />
     <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
       <h1>Forge The Future</h1>
       <h2>BoilerMake VI | Purdue University</h2>

@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+
+import Hero from '../../assets/images/SVG/hero.svg';
 import './_pillar.bm6_grabber.source.scss';
 
 class BM6Grabber extends PureComponent {
@@ -7,6 +9,12 @@ class BM6Grabber extends PureComponent {
   }
 
   render() {
-    return <div className="p-bm6_grabber">Poop</div>;
+    return (
+      <div className="p-bm6_grabber">
+        <img src={Hero} width="100%" />
+      </div>
+    );
   }
 }
+
+export default BM6Grabber;
