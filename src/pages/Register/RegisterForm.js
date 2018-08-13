@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { reduxForm } from 'redux-form';
 import { Button, TextInput } from 'bm-kit';
 
 import GithubLoginButton from '../../components/GithubLoginButton';
@@ -79,6 +78,4 @@ class RegisterForm extends PureComponent {
   }
 }
 
-export default reduxForm({
-  form: 'Register' // a unique identifier for this form
-})(RegisterForm);
+export default RegisterForm;

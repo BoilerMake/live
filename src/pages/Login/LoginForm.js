@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { Button, TextInput } from 'bm-kit';
 import GithubLoginButton from '../../components/GithubLoginButton';
