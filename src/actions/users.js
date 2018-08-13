@@ -26,7 +26,6 @@ function saveToken(token) {
 }
 export const LOGOUT_USER = 'LOGOUT_USER';
 export function logoutUser() {
-  console.log('hi');
   return function(dispatch) {
     dispatch({ type: LOGOUT_USER });
     cookie.remove('token', { path: '/' });
