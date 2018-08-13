@@ -99,9 +99,7 @@ export function authUserWithGithub(code) {
       .then(json => {
         if (json.success) {
           let { token, action, username } = json.data;
-          console.log(json);
           if (token) {
-            console.log('got jwt via gh', token);
             let messagePrefix;
             if (action === 'link') {
               messagePrefix = `linked`;
@@ -117,7 +115,6 @@ export function authUserWithGithub(code) {
             dispatch(loginFromJWT(token));
           }
         } else {
-          console.log('authUserWithGithub error:', json.message);
           toastr.error('Error', json.message);
           dispatch(showGitHubEmailErrorMessage());
         }
