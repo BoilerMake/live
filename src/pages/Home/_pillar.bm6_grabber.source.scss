@@ -1,3 +1,40 @@
+@import '../../assets/tools.scss';
+
 .p-bm6_grabber {
-  
+
+  position: relative;
+  background: $light_mono;
+  width: 100%;
+}
+
+.p-bm6_grabber__content {
+  @include max-width;
+  display: flex;
+  justify-content: center;
+}
+
+.p-bm6_grabber__content_words--wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.p-bm6_grabber__content_words--wrapper h1 {
+  margin: 0;
+}
+
+.p-bm6_grabber__content_words {
+    display: block;
+}
+
+.p-bm6_grabber__clouds {
+  width: 100%;
+  height: 200px;
+  background: red;
+  background: url('../../assets/images/SVG/clouds.svg');
+  background-repeat: repeat-x;
+  // background-size: 50%;
+  position: absolute;
+  bottom: 0px;
+  background-position: bottom center;
 }

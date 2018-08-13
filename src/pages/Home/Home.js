@@ -7,16 +7,20 @@ import PreFooter from './Home_PreFooter';
 import Images from './images';
 
 import './_pillar.home.source.scss';
+const bm6 = true;
 
 const Home = () => (
-  <div>
-    <BM6Grabber />
-    <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
-      <h1>Forge The Future</h1>
-      <h2>BoilerMake VI | Purdue University</h2>
-      <h2>October 19 - 21, 2018</h2>
-      <h2>Applications opening soon</h2>
-    </Header>
+  <div className="p-home">
+    {bm6 ? (
+      <BM6Grabber />
+    ) : (
+      <Header img={Images.header} startColor="#667EEA" endColor="#764BA2">
+        <h1>Forge The Future</h1>
+        <h2>BoilerMake VI | Purdue University </h2>
+        <h2>October 19 - 21, 2018</h2>
+        <h2>Applications opening soon</h2>
+      </Header>
+    )}
     <MailChimpSignup />
     <div className="max-width home flex">
       <div className="col-8 paddingr" style={{ margin: '30px auto' }}>
