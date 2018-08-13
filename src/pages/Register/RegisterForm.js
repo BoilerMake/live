@@ -4,7 +4,6 @@ import { reduxForm } from 'redux-form';
 import { Button, TextInput } from 'bm-kit';
 
 import GithubLoginButton from '../../components/GithubLoginButton';
-import { apiFetch } from '../../util/api';
 
 import '../../assets/_form.scss';
 
@@ -27,7 +26,6 @@ class RegisterForm extends PureComponent {
 
     this.updateEmail = this.updateEmail.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
   updateEmail(e) {
@@ -35,10 +33,6 @@ class RegisterForm extends PureComponent {
   }
   updatePassword(e) {
     this.setState({ password: e.target.value });
-  }
-
-  onSubmit() {
-    console.log(this.state.email, this.state.password);
   }
 
   render() {
@@ -68,7 +62,9 @@ class RegisterForm extends PureComponent {
           full={true}
           type="submit"
           disabled={submitting}
-          onClick={this.onSubmit}
+          onClick={() =>
+            this.props.onSubmit(this.state.email, this.state.password)
+          }
         >
           Register
         </Button>

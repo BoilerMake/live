@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
 import './_pillar.nav.source.scss';
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferrer: false };
+  }
+
   render() {
     return (
       <div className="p-nav">
@@ -31,6 +37,10 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
+            {/* Had this in for testing */}
+            {/* <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+              Logout
+            </a> */}
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
@@ -43,4 +53,19 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+//now the redux integration layer
+import { connect } from 'react-redux';
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  logoutUser: () => dispatch(logoutUser())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Nav);

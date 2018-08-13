@@ -1,0 +1,8 @@
+@import '../../assets/tools.scss';
+
+.p-application {
+  @include max-width;
+  &:after {
+    @include dark-header;
+  }
+}

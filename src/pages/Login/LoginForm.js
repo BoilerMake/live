@@ -1,35 +1,67 @@
-import React from 'react'
-import { reduxForm } from 'redux-form'
-import { Link } from 'react-router-dom'
+import React, { PureComponent } from 'react';
+import { reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 import { Button, TextInput } from 'bm-kit';
-import GithubLoginButton from '../../components/GithubLoginButton'
+import GithubLoginButton from '../../components/GithubLoginButton';
 
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-    <div>
-        <div>
-            <input {...input} placeholder={label} type={type}/>
-            {touched && error && <span>{error}</span>}
-        </div>
-    </div>
-);
+class LoginForm extends PureComponent {
+  constructor(props) {
+    super(props);
 
-const LoginForm = (props) => {
-    const { error, handleSubmit, submitting } = props;
+    this.state = {
+      email: '',
+      password: ''
+    };
+
+    this.updateEmail = this.updateEmail.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+  }
+
+  updateEmail(e) {
+    this.setState({ email: e.target.value });
+  }
+  updatePassword(e) {
+    this.setState({ password: e.target.value });
+  }
+
+  render() {
+    const { error, onSubmit, submitting } = this.props;
+
     return (
-        <form onSubmit={handleSubmit} className="form">
-            <TextInput name="email" type="email" component={renderField} label="Email" className="topSpacing" placeholder="you@school.edu"/>
-            <TextInput name="password" type="password" component={renderField} label="Password" className="topSpacing" />
-            {error && <div className="margint">{error}</div>}
-            <Button type="submit" disabled={submitting} full>Login</Button>
-            <GithubLoginButton actionText="Login"/>
+      <div>
+        <TextInput
+          name="email"
+          type="text"
+          label="Email"
+          placeholder="you@school.edu"
+          onChange={this.updateEmail}
+          value={this.state.email}
+        />
+        <TextInput
+          name="password"
+          type="password"
+          label="Password"
+          onChange={this.updatePassword}
+          value={this.state.password}
+        />
+        {error && <div className="margint">{error}</div>}
+        <Button
+          type="submit"
+          disabled={submitting}
+          full
+          onClick={() => onSubmit(this.state.email, this.state.password)}
+        >
+          Login
+        </Button>
+        <GithubLoginButton actionText="Login" />
 
-            <div className="flex margint h-center">
-                <Link to="/register">Register</Link> / <Link to="/reset">Forgot your password?</Link>
-            </div>
-        </form>
+        <div className="flex margint h-center">
+          <Link to="/register">Register</Link> /{' '}
+          <Link to="/reset">Forgot your password?</Link>
+        </div>
+      </div>
     );
+  }
 }
 
-export default reduxForm({
-    form: 'Login'  // a unique identifier for this form
-})(LoginForm)
+export default LoginForm;
