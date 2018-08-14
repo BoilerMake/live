@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SubmissionError } from 'redux-form';
+// import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
 import { Card } from 'bm-kit';
 import RequestPasswordResetForm from './RequestPasswordResetForm';

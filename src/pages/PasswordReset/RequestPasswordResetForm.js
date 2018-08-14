@@ -1,17 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { Button, TextInput } from 'bm-kit';
 import '../../assets/_form.scss';
 
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    {/*<label>{label}</label>*/}
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-);
 class RequestPasswordResetForm extends PureComponent {
   constructor(props) {
     super(props);
@@ -33,7 +24,6 @@ class RequestPasswordResetForm extends PureComponent {
       <div>
         <TextInput
           name="email"
-          component={renderField}
           label="Email"
           hasError={!!error}
           errorText={error}

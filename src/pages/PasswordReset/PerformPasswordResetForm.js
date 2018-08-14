@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { Button, TextInput } from 'bm-kit';
 import '../../assets/_form.scss';
 
@@ -33,14 +33,12 @@ class PerformPasswordResetForm extends PureComponent {
         <TextInput
           name="password"
           type="password"
-          component={renderField}
           label="New Password"
           onChange={this.handlePassword}
         />
         <TextInput
           name="password2"
           type="password"
-          component={renderField}
           label="Confirm New Password"
           onChange={this.handlePasswordConfirm}
         />
@@ -52,15 +50,6 @@ class PerformPasswordResetForm extends PureComponent {
     );
   }
 }
-const renderField = ({ input, label, type, meta: { touched, error } }) => (
-  <div>
-    {/*<label>{label}</label>*/}
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && error && <span>{error}</span>}
-    </div>
-  </div>
-);
 
 export default reduxForm({
   form: 'PerformPasswordResetForm' // a unique identifier for this form
