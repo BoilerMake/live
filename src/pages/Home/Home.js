@@ -21,7 +21,8 @@ const Home = () => (
         <h2>Applications opening soon</h2>
       </Header>
     )}
-    <MailChimpSignup />
+
+    {bm6 ? null : <MailChimpSignup />}
     <div className="max-width home flex">
       <div className="col-8 paddingr" style={{ margin: '30px auto' }}>
         <h2>Create, Meet, Learn, & Build</h2>
