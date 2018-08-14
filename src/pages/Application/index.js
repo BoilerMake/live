@@ -29,13 +29,9 @@ class Application extends Component {
     } else if (doesUserHaveDecision) {
       content = <ApplicationDecision />;
     } else {
-      content = <h1>Applications Closed.</h1>;
+      content = <ApplicationForm />;
     }
-    return (
-      <div className="p-application">
-        <ApplicationForm />
-      </div>
-    );
+
     return <div className="p-application">{content}</div>;
   }
 }

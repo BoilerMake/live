@@ -29,7 +29,7 @@ class ApplicationForm extends Component {
   }
 
   render() {
-    const { applicationForm, validation } = this.props.application;
+    const { applicationForm } = this.props.application;
     const isLoading = this.props.application.loading;
     const isGithubLinked =
       this.props.user.me && this.props.user.me.github_user_id !== null;
