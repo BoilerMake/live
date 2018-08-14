@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
 import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
+import { toastr } from 'react-redux-toastr';
 import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
 export class Register extends Component {
@@ -21,6 +22,7 @@ export class Register extends Component {
       .then(response => response.json())
       .then(json => {
         if (json.success === false) {
+          toastr.error('Registration error', json.message[0]);
           throw new SubmissionError({ _error: json.message });
         } else {
           console.log(json.data.token);
