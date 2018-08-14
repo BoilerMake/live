@@ -45,7 +45,7 @@ export class Register extends Component {
       <div className="p-login">
         <div className="p-login__content">
           <Card className="col-6">
-            <h1 className="title">Register</h1>
+            <h1>Register</h1>
             <RegisterForm onSubmit={this.handleSubmit} />
           </Card>
         </div>

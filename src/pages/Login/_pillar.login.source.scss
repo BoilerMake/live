@@ -27,3 +27,15 @@
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   cursor: pointer;
 }
+
+.p-login__links {
+  color: $dark_blue;
+
+  &:first-child {
+    margin-right: $spacing_50;
+  }
+
+  &:last-child {
+    margin-left: $spacing_50;
+  }
+}

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Button, TextInput } from 'bm-kit';
 import GithubLoginButton from '../../components/GithubLoginButton';
 
+import './_pillar.login.source.scss';
+
 class LoginForm extends PureComponent {
   constructor(props) {
     super(props);
@@ -32,7 +34,6 @@ class LoginForm extends PureComponent {
           name="email"
           type="text"
           label="Email"
-          placeholder="you@school.edu"
           onChange={this.updateEmail}
           value={this.state.email}
         />
@@ -55,8 +56,13 @@ class LoginForm extends PureComponent {
         <GithubLoginButton actionText="Login" />
 
         <div className="flex margint h-center">
-          <Link to="/register">Register</Link> /{' '}
-          <Link to="/reset">Forgot your password?</Link>
+          <Link to="/register" className="p-login__links">
+            Register
+          </Link>{' '}
+          /{' '}
+          <Link to="/reset" className="p-login__links">
+            Forgot your password?
+          </Link>
         </div>
       </div>
     );

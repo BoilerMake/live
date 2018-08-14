@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'bm-kit';
 import Header from '../../components/Header';
 import Images from './images';
 
@@ -42,7 +43,7 @@ const Hackers = () => (
           more.
         </p>
         <a href="https://boilermake-v.devpost.com/">
-          <button>Past Hacks</button>
+          <Button>Past Hacks</Button>
         </a>
       </div>
     </div>
@@ -80,7 +81,7 @@ const Hackers = () => (
           about new technologies and real-world applications of your skills.
           Some sponsors may even provide fun activities or free swag!
         </p>
-        <button>View Past Sponsors</button>
+        <Button>View Past Sponsors</Button>
       </div>
       <div className="col-4">
         <img

@@ -70,7 +70,10 @@ class RegisterForm extends PureComponent {
         <GithubLoginButton className="topSpacing" actionText="Register" />
         <div className="flex margint h-center">
           <div>
-            Already Have an account? <Link to="/login">Login here</Link>
+            Already Have an account?
+            <Link to="/login" className="p-login__links">
+              Login here
+            </Link>
           </div>
         </div>
       </div>

@@ -18,12 +18,8 @@ body {
   font-family: $font-body, Arial, -apple-system,BlinkMacSystemFont,"Segoe UI","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
   color: $black;
 }
-.none {
-  display: none;
-}
-.content {
-  flex: 1 0 auto;
-}
+.none { display: none; }
+.content {flex: 1 0 auto; }
 // FONT OVERRIDES
 h1 { font-size: 50px; }
 @media (max-width: 480px) {
@@ -41,14 +37,11 @@ a { text-decoration: none; }
 // FONTS
 .title { font-family: $font-title }
 
-
 // ONE-LINERS
 .hidden { display: none; }
 .icon { fill: red; }
 .align-end { align-items: flex-end; }
-.flex {
-  display: flex;
-}
+.flex { display: flex; }
 .v-center { align-items: center; }
 .h-center { justify-content: center; }
 
@@ -68,34 +61,4 @@ a { text-decoration: none; }
 .marginr { margin-right: 16px; }
 .marginx { margin: 0 16px; }
 .marginy { margin: 16px 0; }
-
-.btn {
-  font-size: 15px;
-  font-family: $font-title;
-  font-weight: bold;
-  background-color: $pink;
-  color: $white;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
-  text-decoration: none;
-}
-.btn:hover, .btn:active, .btn:focus {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  color: $white;
-}
-.btn:hover, .btn:focus {
-  background-color: $lightPink;
-  color: $white;
-  box-shadow: 0px 0px 40px -8px $lightBlue;
-}
-
-.max-width {
-  max-width: 1180px;
-  padding: 0 20px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
+textarea, select, input, button { outline: none; }

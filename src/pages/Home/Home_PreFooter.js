@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'bm-kit';
 // import HeaderImg from '../assets/images/hacker.jpg';
 
 const PreFooter = () => (
@@ -13,7 +14,7 @@ const PreFooter = () => (
             explore and create new ideas.
           </p>
           <Link to="/hackers">
-            <button>Read More</button>
+            <Button>Read More</Button>
           </Link>
         </div>
         <div className="col-4" />
@@ -29,7 +30,7 @@ const PreFooter = () => (
             students to work on incredible projects.
           </p>
           <Link to="/sponsors">
-            <button>Read More</button>
+            <Button>Read More</Button>
           </Link>
         </div>
         <div className="col-4" />

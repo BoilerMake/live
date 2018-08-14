@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
+import { Card } from 'bm-kit';
 import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
 import apiFetch from '../../actions';
@@ -9,11 +10,15 @@ import '../../assets/_form.scss';
 class PasswordReset extends Component {
   constructor(props) {
     super(props);
-    this.state = { message: null };
+    this.state = {
+      message: null
+    };
   }
-  handleRequestSubmit = values => {
+
+  handleRequestSubmit = email => {
+    console.log(email);
     let d = new FormData();
-    d.append('email', values.email);
+    d.append('email', email);
     return apiFetch('users/reset/send', {
       method: 'POST',
       body: d
@@ -21,18 +26,21 @@ class PasswordReset extends Component {
       .then(response => response.json())
       .then(json => {
         if (json.success === false) {
-          throw new SubmissionError({ _error: json.message });
+          //TODO: Handle errors?
+          // throw new SubmissionError({ _error: json.message });
         } else {
           this.setState({ message: json.data });
         }
       });
   };
 
-  handlePerformSubmit = values => {
-    if (values.password !== values.password2)
-      throw new SubmissionError({ _error: "passwords don't match!" });
+  handlePerformSubmit = (password, password2) => {
+    if (password !== password2) {
+      return;
+      // throw new SubmissionError({ _error: "passwords don't match!" });
+    }
     let d = new FormData();
-    d.append('password', values.password);
+    d.append('password', password);
     d.append('token', this.props.match.params.reset_token);
     return apiFetch('users/reset/perform', {
       method: 'POST',
@@ -41,7 +49,7 @@ class PasswordReset extends Component {
       .then(response => response.json())
       .then(json => {
         if (json.success === false) {
-          throw new SubmissionError({ _error: json.message });
+          // throw new SubmissionError({ _error: json.message });
         } else {
           this.setState({ message: json.data });
         }
@@ -54,7 +62,6 @@ class PasswordReset extends Component {
     let isTokenShowing = this.props.match.params.reset_token !== undefined;
     let requestReset = (
       <div>
-        <p>Please enter your email.</p>
         <RequestPasswordResetForm onSubmit={this.handleRequestSubmit} />
       </div>
     );
@@ -64,10 +71,14 @@ class PasswordReset extends Component {
       </div>
     );
     return (
-      <div className="login">
-        <h1 className="title center">Reset Your Password</h1>
-        {isTokenShowing ? performReset : requestReset}
-        <p>{this.state.message}</p>
+      <div className="p-login">
+        <div className="p-login__content">
+          <Card className="col-6">
+            <h1>Reset Your Password</h1>
+            {isTokenShowing ? performReset : requestReset}
+            <p>{this.state.message}</p>
+          </Card>
+        </div>
       </div>
     );
   }

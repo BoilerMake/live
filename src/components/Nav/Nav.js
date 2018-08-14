@@ -38,9 +38,9 @@ class Nav extends Component {
               FAQ
             </NavLink>
             {/* Had this in for testing */}
-            {/* <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+            <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
               Logout
-            </a> */}
+            </a>
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">

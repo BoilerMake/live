@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'bm-kit';
 import Header from '../../components/Header';
 import Images from './images';
 
@@ -82,7 +83,7 @@ const Sponsors = () => (
           </li>
         </ul>
         <br />
-        <button>sponsorship@boilermake.org</button>
+        <Button>sponsorship@boilermake.org</Button>
       </div>
     </div>
   </div>
