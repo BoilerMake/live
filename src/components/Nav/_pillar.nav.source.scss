@@ -15,9 +15,63 @@
   z-index: 100;
 }
 
+.p-nav__logo {
+  height: 40px;
+  width: auto;
+}
+
 .p-nav__logo--hammers {
-  width: 40px;
-  height: auto;
+  height: 100%;
+  width: auto;
+}
+
+.p-nav__nav_links--mobile {
+	display: none;
+	margin: 0 10px;
+	font-family: Futura;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+  text-decoration: none;
+	color: #fff;
+}
+
+.p-nav__dropdown_mobile {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid #fff;
+	padding: 8px;
+	border-radius: 4px;
+}
+
+.p-nav__dropdown_mobile--content {
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	padding: 0 12px;
+	top: 40px;
+	left: 0;
+}
+
+.p-nav__dropdown--account {
+	margin: 20px 0;
+
+	.p-nav__dropdown_link {
+		display: inline;
+	}
+
+	.p-nav__dropdown_link--apply {
+		display: inline;
+		margin: 0 20px 0 0;
+		color: #000;
+		border: 1px solid #000;
+		padding: 8px;
+		border-radius: 4px;
+	}
 }
 
 .p-nav__nav_links {
@@ -34,6 +88,42 @@
 	color: #fff;
 }
 
+.p-nav__dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.p-nav__dropdown_content {
+	display: none;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	padding: 0 12px;
+}
+
+.p-nav__dropdown:hover .p-nav__dropdown_content {
+	display: block;
+}
+
+.p-nav__dropdown_link {
+	display: block;
+	margin: 10px 0;
+	font-family: Futura;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+  text-decoration: none;
+	color: #000;
+}
+
+.p-nav__nav_link--apply {
+	border: 1px solid #fff;
+	padding: 8px;
+	border-radius: 4px;
+}
+
 .p-nav__mlh-badge {
   width: 100px;
   position: absolute;
@@ -42,18 +132,12 @@
   right: 24px;
 }
 
-@media screen and (max-width: 360px) {
-  .p-nav {
-    white-space: nowrap;
-    overflow: hidden;
-  }
+@media screen and (max-width: 600px) {
+	.p-nav__nav_links--mobile {
+		display: inline;
+	}
 
-  .p-nav__nav_links {
-    overflow-scrolling: touch;
-  }
-
-  .p-nav__nav_link {
-    margin: 0 6px;
-    font-size: 14px;
-  }
+	.p-nav__nav_links {
+		display: none;
+	}
 }
