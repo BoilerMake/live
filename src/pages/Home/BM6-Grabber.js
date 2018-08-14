@@ -6,9 +6,9 @@ import Hero from '../../assets/images/SVG/hero.svg';
 import './_pillar.bm6_grabber.source.scss';
 
 class BM6Grabber extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -26,7 +26,7 @@ class BM6Grabber extends PureComponent {
             </div>
           </div>
           <div className="col-4 p-bm6_grabber_illustration">
-            <img src={Hero} width="100%" />
+            <img src={Hero} width="100%" alt="BM6 Hero" />
           </div>
         </div>
         <div className="p-bm6_grabber__clouds" />
