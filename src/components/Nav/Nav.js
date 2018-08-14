@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { Button } from 'bm-kit';
 import { logoutUser } from '../../actions/users';
-import logo from '../../assets/images/hammers.svg';
+import logo from '../../assets/images/bm6_hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
 import './_pillar.nav.source.scss';
 
@@ -16,7 +17,8 @@ class Nav extends Component {
 
   render() {
     const { showing } = this.state;
-
+    const { user } = this.props;
+    console.log(user);
     return (
       <div className="p-nav">
         <div className="p-nav_content">
@@ -38,16 +40,39 @@ class Nav extends Component {
               {showing ? (
                 <div className="p-nav__dropdown_mobile--content">
                   <div className="p-nav__dropdown--account">
-                    <NavLink
-                      exact
-                      to="/register"
-                      className="p-nav__dropdown_link--apply"
-                    >
-                      Apply
-                    </NavLink>
-                    <NavLink exact to="/login" className="p-nav__dropdown_link">
-                      Login
-                    </NavLink>
+                    {user.authenticated ? (
+                      <NavLink
+                        exact
+                        to="/application"
+                        className="p-nav__dropdown_link--apply"
+                      >
+                        <Button>Application</Button>
+                      </NavLink>
+                    ) : (
+                      <NavLink
+                        exact
+                        to="/register"
+                        className="p-nav__dropdown_link--apply"
+                      >
+                        <Button>Apply</Button>
+                      </NavLink>
+                    )}
+                    {user.authenticated ? (
+                      <a
+                        className="p-nav__dropdown_link"
+                        onClick={this.props.logoutUser}
+                      >
+                        Logout
+                      </a>
+                    ) : (
+                      <NavLink
+                        exact
+                        to="/login"
+                        className="p-nav__dropdown_link"
+                      >
+                        Login
+                      </NavLink>
+                    )}
                   </div>
                   <hr />
                   <NavLink exact to="/faq" className="p-nav__dropdown_link">
@@ -91,20 +116,32 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
-            <NavLink exact to="/login" className="p-nav__nav_link">
-              Login
-            </NavLink>
-            <NavLink
-              exact
-              to="/register"
-              className="p-nav__nav_link p-nav__nav_link--apply"
-            >
-              Apply
-            </NavLink>
-            {/* Had this in for testing */}
-            <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
-              Logout
-            </a>
+            {user.authenticated ? (
+              <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+                Logout
+              </a>
+            ) : (
+              <NavLink exact to="/login" className="p-nav__nav_link">
+                Login
+              </NavLink>
+            )}
+            {user.authenticated ? (
+              <NavLink
+                exact
+                to="/application"
+                className="p-nav__nav_link p-nav__nav_link--apply"
+              >
+                <Button>Application</Button>
+              </NavLink>
+            ) : (
+              <NavLink
+                exact
+                to="/register"
+                className="p-nav__nav_link p-nav__nav_link--apply"
+              >
+                <Button>Apply</Button>
+              </NavLink>
+            )}
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">
