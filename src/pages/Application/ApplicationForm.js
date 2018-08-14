@@ -15,6 +15,19 @@ import {
 import './_pillar.application.source.scss';
 
 class ApplicationForm extends Component {
+  fieldHasError(field) {
+    const { validation } = this.props.application;
+    return validation.reason_field.indexOf(field) > -1;
+  }
+
+  fieldErrorText(field) {
+    const { validation } = this.props.application;
+    const fieldIndex = validation.reason_field.indexOf(field);
+    if (fieldIndex <= -1) return null;
+
+    return validation.reason_label[fieldIndex];
+  }
+
   render() {
     const { applicationForm, validation } = this.props.application;
     const isLoading = this.props.application.loading;
@@ -40,12 +53,17 @@ class ApplicationForm extends Component {
               under review. Expect to hear back by Sept 22 at the latest.
             </div>
           ) : null}
-          <ApplicationTextField field="first_name" label="First Name" />
+          <ApplicationTextField
+            field="first_name"
+            label="First Name"
+            hasError={this.fieldHasError('first_name')}
+            errorText={this.fieldErrorText('first_name')}
+          />
           <ApplicationTextField
             field="last_name"
             label="Last Name"
-            hasError
-            errorText="Last Name is required"
+            hasError={this.fieldHasError('last_name')}
+            errorText={this.fieldErrorText('last_name')}
           />
           <div className="p-application__form_label">School</div>
           <ApplicationSelectField
@@ -53,7 +71,12 @@ class ApplicationForm extends Component {
             searchable
             options={this.props.schools}
           />
-          <ApplicationTextField field="major" label="Major" />
+          <ApplicationTextField
+            field="major"
+            label="Major"
+            hasError={this.fieldHasError('major')}
+            errorText={this.fieldErrorText('major')}
+          />
           <div className="p-application__form_label">
             Expected Graduation Year
           </div>
@@ -66,11 +89,15 @@ class ApplicationForm extends Component {
             field="linkedin"
             label="LinkedIn"
             disabled={!applicationForm.has_no_linkedin}
+            hasError={this.fieldHasError('linkedin')}
+            errorText={this.fieldErrorText('linkedin')}
           />
           <ApplicationTextField
             field="github"
             label="GitHub"
             disabled={!applicationForm.has_no_github}
+            hasError={this.fieldHasError('github')}
+            errorText={this.fieldErrorText('github')}
           />
           {isGithubLinked ? (
             <div>
@@ -160,20 +187,6 @@ class ApplicationForm extends Component {
           </div>
           <div className="row">
             <p>You can edit your application until September 22.</p>
-            {!applicationForm.completed ? (
-              <div>
-                <p>Your application is not complete:</p>
-                <ul>
-                  {validation.reason_label.map(x => (
-                    <li>{x}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <p>
-                <b>Your application is complete! stay tuned.</b>
-              </p>
-            )}
           </div>
           <div className="row">
             <Button
@@ -183,7 +196,7 @@ class ApplicationForm extends Component {
               }}
               full
             >
-              {applicationForm.completed ? 'Submit' : 'Save & Come Back'}
+              Save Application
             </Button>
           </div>
         </Card>
