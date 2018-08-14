@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom';
 import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
-import { Button } from 'bm-kit';
 import './_pillar.nav.source.scss';
 
 class Nav extends Component {
@@ -41,7 +40,7 @@ class Nav extends Component {
                   <div className="p-nav__dropdown--account">
                     <NavLink
                       exact
-                      to="/apply"
+                      to="/register"
                       className="p-nav__dropdown_link--apply"
                     >
                       Apply
@@ -64,14 +63,8 @@ class Nav extends Component {
                   >
                     Sponsors
                   </NavLink>
-                  <NavLink exact to="/team" className="p-nav__dropdown_link">
-                    Team
-                  </NavLink>
                   <NavLink exact to="/about" className="p-nav__dropdown_link">
-                    About
-                  </NavLink>
-                  <NavLink exact to="/slack" className="p-nav__dropdown_link">
-                    Join our Slack
+                    Team
                   </NavLink>
                 </div>
               ) : null}
@@ -90,7 +83,7 @@ class Nav extends Component {
                 <NavLink exact to="/sponsors" className="p-nav__dropdown_link">
                   Sponsors
                 </NavLink>
-                <NavLink exact to="/team" className="p-nav__dropdown_link">
+                <NavLink exact to="/about" className="p-nav__dropdown_link">
                   Team
                 </NavLink>
               </div>
@@ -98,15 +91,12 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
-            <NavLink exact to="/slack" className="p-nav__nav_link">
-              Join our Slack
-            </NavLink>
             <NavLink exact to="/login" className="p-nav__nav_link">
               Login
             </NavLink>
             <NavLink
               exact
-              to="/apply"
+              to="/register"
               className="p-nav__nav_link p-nav__nav_link--apply"
             >
               Apply
