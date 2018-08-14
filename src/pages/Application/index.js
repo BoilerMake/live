@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ApplicationDecision from './ApplicationDecision';
+import ApplicationForm from './ApplicationForm';
 
 import './_pillar.application.source.scss';
 
@@ -30,7 +31,11 @@ class Application extends Component {
     } else {
       content = <h1>Applications Closed.</h1>;
     }
-
+    return (
+      <div className="p-application">
+        <ApplicationForm />
+      </div>
+    );
     return <div className="p-application">{content}</div>;
   }
 }

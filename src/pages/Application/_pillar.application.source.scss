@@ -6,3 +6,24 @@
     @include dark-header;
   }
 }
+
+.p-application__form {
+  max-width: 500px;
+  margin: $spacing_200 auto;
+  font-family: $font-body;
+  font-size: 15px;
+  color: #5E5E5E;
+}
+
+.p-application__form_label {
+  margin-top: $spacing_100;
+  margin-bottom: $spacing_50;
+}
+
+.p-application_resume_upload {
+  margin-top: $spacing_100;
+}
+
+.p-application__form_tanc {
+  margin-top: $spacing_100;
+}
