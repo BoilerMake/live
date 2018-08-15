@@ -15,11 +15,11 @@ class Nav extends Component {
   }
 
   componentWillMount() {
-    document.addEventListener('mousedown', this.handleClick, false);
+    document.addEventListener('touchmove', this.handleClick, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick, false);
+    document.removeEventListener('touchmove', this.handleClick, false);
   }
 
   handleClick = e => {
