@@ -1,5 +1,10 @@
 @import '../../assets/tools.scss';
 
+.p-home {
+  &:after {
+    @include dark-header;
+  }
+}
 .p-home__prefooter_item {
   @include max-width;
 }
