@@ -1,7 +1,7 @@
 @import '../../assets/tools.scss';
 
 .p-nav {
-  background: lighten($light_yellow, 5%);
+  background: $light_yellow;
   color: $dark_mono;
   position: relative;
   z-index: 100;
