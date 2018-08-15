@@ -7,7 +7,7 @@ import './_pillar.hackers.source.scss';
 
 const Hackers = () => (
   <div>
-    <Header img={Images.HeaderImg} startColor="#f25f89" endColor="#9a96f2">
+    <Header img={Images.HeaderImg} startColor="#A846E2" endColor="#9a96f2">
       <h1>A Weekend Full of Hacking</h1>
       <h2>Come and make cool stuff</h2>
     </Header>

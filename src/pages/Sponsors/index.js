@@ -7,7 +7,7 @@ import './_pillar.sponsors.source.scss';
 
 const Sponsors = () => (
   <div>
-    <Header img={Images.HeaderImg} startColor="#F78CA0" endColor="#FE998B">
+    <Header img={Images.HeaderImg} startColor="#1AAC84" endColor="#FE998B">
       <h1>Sponsor a weekend of ideas</h1>
       <h2>sponsorship@boilermake.org</h2>
     </Header>
