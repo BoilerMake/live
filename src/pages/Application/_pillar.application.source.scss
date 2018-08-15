@@ -15,6 +15,10 @@
   color: #5E5E5E;
 }
 
+.p-application__form h1 {
+  margin-top: 0;
+}
+
 .p-application__form_label {
   margin-top: $spacing_100;
   margin-bottom: $spacing_50;
@@ -30,4 +34,17 @@
 
 .p-application__form a {
   color: $dark_blue;
+}
+
+.p-application__status_card {
+  margin: auto;
+  margin-top: $spacing_200;
+  max-width: 500px;
+  background: $light_green;
+  text-align: center;
+}
+
+.p-application__status_card a {
+  color: $dark_mono;
+  text-decoration: underline;
 }

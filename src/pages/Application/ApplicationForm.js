@@ -45,14 +45,27 @@ class ApplicationForm extends Component {
         onDrop={this.props.onResumeDrop.bind(this)}
         style={{ border: 'none', height: '100%' }}
       >
+        {applicationForm.completed ? (
+          <Card className="p-application__status_card">
+            <p>
+              Hey there{' '}
+              <span role="img" aria-label="wave">
+                👋
+              </span>{' '}
+              just a heads up! Your application is complete and is under review.
+              Expect to hear back by October 10th at the latest.
+            </p>
+            <p>
+              In the mean time, follow us on{' '}
+              <a href="https://twitter.com/boilermake1">Twitter</a>
+              ,&nbsp;
+              <a href="https://facebook.com/boilermake">Facebook</a>, or&nbsp;
+              <a href="https://instagram.com/boilermake">Instagram</a>
+            </p>
+          </Card>
+        ) : null}
         <Card className="p-application__form">
           <h1>Application</h1>
-          {applicationForm.completed ? (
-            <div className="appInfoBanner">
-              Hey there - just a heads up: Your application is complete and is
-              under review. Expect to hear back by Sept 22 at the latest.
-            </div>
-          ) : null}
           <ApplicationTextField
             field="first_name"
             label="First Name"
@@ -143,7 +156,7 @@ class ApplicationForm extends Component {
           <div className="p-application__form_tanc flex v-center">
             <ApplicationToggle field="tandc_1" />
             <label className="marginl last-check-s">
-              I will be 18 or older by Sept 29, 2017.
+              I will be 18 or older by October 19, 2018.
             </label>
           </div>
           <div className="p-application__form_tanc flex v-center">
@@ -186,7 +199,7 @@ class ApplicationForm extends Component {
             </div>
           </div>
           <div className="row">
-            <p>You can edit your application until September 22.</p>
+            <p>You can edit your application until October 10th.</p>
           </div>
           <div className="row">
             <Button

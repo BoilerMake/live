@@ -1,0 +1,9 @@
+@import '../../assets/tools.scss';
+
+.p-sponsors {
+  @include max-width;
+}
+
+.p-sponsors__logos {
+  flex-wrap: wrap;
+}

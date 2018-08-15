@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Button } from 'bm-kit';
+// import { Button } from 'bm-kit';
 import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/bm6_hammers.svg';
 import mlh from '../../assets/images/mlh-badge.svg';
@@ -36,10 +36,10 @@ class Nav extends Component {
               className="p-nav__dropdown_mobile"
               onClick={() => this.setState({ showing: !showing })}
             >
-              Menu
+              &#9776;
               {showing ? (
                 <div className="p-nav__dropdown_mobile--content">
-                  <div className="p-nav__dropdown--account">
+                  {/* <div className="p-nav__dropdown--account">
                     {user.authenticated ? (
                       <NavLink
                         exact
@@ -74,7 +74,7 @@ class Nav extends Component {
                       </NavLink>
                     )}
                   </div>
-                  <hr />
+                  <hr /> */}
                   <NavLink exact to="/faq" className="p-nav__dropdown_link">
                     FAQ
                   </NavLink>
@@ -116,7 +116,7 @@ class Nav extends Component {
             <NavLink exact to="/faq" className="p-nav__nav_link">
               FAQ
             </NavLink>
-            {user.authenticated ? (
+            {/* {user.authenticated ? (
               <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
                 Logout
               </a>
@@ -141,7 +141,7 @@ class Nav extends Component {
               >
                 <Button>Apply</Button>
               </NavLink>
-            )}
+            )} */}
           </nav>
         </div>
         <a href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white">

@@ -1,0 +1,5 @@
+@import '../../assets/tools.scss';
+
+.p-hackers {
+  @include max-width;
+}
