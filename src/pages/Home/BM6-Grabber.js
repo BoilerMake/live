@@ -16,7 +16,7 @@ class BM6Grabber extends PureComponent {
         <div className="p-bm6_grabber__content">
           <div className="col-8 p-bm6_grabber__content_words--wrapper">
             <div className="p-bm6_grabber__content_words">
-              <h2>BoilerMake 6</h2>
+              <h2>BoilerMake VI</h2>
               <h1>Forge The Future</h1>
               <h2>Oct 19th-21st, 2018</h2>
               <h2>Purdue University</h2>

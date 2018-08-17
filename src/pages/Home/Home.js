@@ -7,7 +7,7 @@ import PreFooter from './Home_PreFooter';
 import Images from './images';
 
 import './_pillar.home.source.scss';
-const bm6 = false;
+const bm6 = true;
 
 const Home = () => (
   <div className="p-home">

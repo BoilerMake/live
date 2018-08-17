@@ -1,7 +1,6 @@
 @import '../../assets/tools.scss';
 
 .p-bm6_grabber {
-  margin-top: 100px;
   position: relative;
   background: $light_mono;
   width: 100%;
@@ -41,7 +40,7 @@
   background-repeat: repeat-x;
   // background-size: 50%;
   position: absolute;
-  bottom: 0px;
+  bottom: -5px;
   background-position: bottom center;
 }
 
@@ -51,7 +50,10 @@
   }
   .p-bm6_grabber__content_words--wrapper {
       width: 100%;
-      margin-top: $spacing_200;
+      margin-top: 0;
+  }
+  .p-bm6_grabber__content_words {
+    margin-top: $spacing_200;
   }
   .p-bm6_grabber_illustration {
     width: 50% !important;
