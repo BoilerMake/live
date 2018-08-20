@@ -1,7 +1,7 @@
 @import '../../assets/tools.scss';
 
 .p-nav {
-  background: $light_yellow;
+  background: $light_mono;
   color: $dark_mono;
   position: relative;
   z-index: 100;
@@ -193,7 +193,7 @@
 	.p-nav__nav_links {
 		display: none;
 	}
-  
+
   .p-nav__mlh-badge {
     width: 100px;
   }
