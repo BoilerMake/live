@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+// import Schedule from '../../components/Schedule';
 import MailChimpSignup from './MailChimpSignup';
 import BM6Grabber from './BM6-Grabber';
 import ImageDivider from './ImageDivider';
@@ -23,6 +24,11 @@ const Home = () => (
     )}
 
     {bm6 ? null : <MailChimpSignup />}
+    {/* <Schedule /> */}
+    {/* <div className="p-home__sponsor">
+      <div className="p-home__sponsor_caption">Interested in sponsoring BoilerMake VI?</div>
+      <div className="p-home__sponsor_action">sponsorship@boilermake.org</div>
+    </div> */}
     <div className="max-width home flex">
       <div className="col-8 paddingr" style={{ margin: '30px auto' }}>
         <h2>Create, Meet, Learn, & Build</h2>

@@ -4,62 +4,185 @@
   position: relative;
   background: $light_mono;
   width: 100%;
-  // box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.p-bm6_grabber__content {
-  @include max-width;
-  display: flex;
-  justify-content: center;
-}
-
-.p-bm6_grabber__content_words--wrapper {
+  height: calc(100vh - 90px);
+  overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+}
+.p-bm6_grabber__content--flex_wrapper{
+  width: 100%;
+}
+.p-bm6_grabber__content {
+  @include max-width;
+  flex: 0 0 auto;
+  object-fit: scale-down;
   margin-top: -50px;
 }
-
-.p-bm6_grabber__content_words--wrapper h1 {
-  margin: 0;
-  font-size: 60px;
+.p-bm6_grabber__content_topic {
+  font-size: 32px;
+}
+.p-bm6_grabber__content_boilermake {
+  font-size: 52px;
+  font-weight: bold;
+  margin-top: $spacing_75;
+}
+.p-bm6_grabber__content_location {
+  font-size: 18px;
+  margin-top: $spacing_75;
+  color: lighten($dark_mono, 10%);
 }
 
-.p-bm6_grabber__content_words--wrapper h2 {
-  margin: $spacing_50 0;
-}
-
-.p-bm6_grabber__content_words {
-    display: block;
-}
-
-.p-bm6_grabber__clouds {
-  width: 100%;
-  height: 200px;
-  background: red;
-  background: url('../../assets/images/SVG/clouds.svg');
-  background-repeat: repeat-x;
-  // background-size: 50%;
+.p-bm6_grabber__background {
+  width: 600px;
   position: absolute;
-  bottom: -5px;
-  background-position: bottom center;
+  bottom: 0;
+  z-index: 0;
+  right: 50px;
+}
+.p-bm6_grabber__right_tower {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  right: 70px;
+}
+.p-bm6_grabber__back_cloud {
+  width: calc(100% + 80px);
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  animation-name: back_cloud;
+  animation-duration: 20s;
+  animation-iteration-count:infinite;
+}
+.p-bm6_grabber__left_tower {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 400px;
+  z-index: 3;
+}
+.p-bm6_grabber__back_car {
+  width: 200px;
+  position: absolute;
+  bottom: 350px;
+  right: 250px;
+  z-index: 4;
+}
+.p-bm6_grabber__back_car {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 400px;
+  z-index: 3;
+}
+.p-bm6_grabber__middle_cloud {
+  width: calc(100% + 80px);
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  animation-name: middle_cloud;
+  animation-duration: 15s;
+  animation-iteration-count:infinite;
+}
+.p-bm6_grabber__middle_tower {
+  width: 180px;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  right: 200px;
+}
+.p-bm6_grabber__front_cloud {
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  z-index: 6;
+}
+.p-bm6_grabber__front_car {
+  width: 200px;
+  position: absolute;
+  bottom: 25%;
+  z-index: 7;
+  right: 150px;
 }
 
-@media (max-width: 780px) {
-  .p-bm6_grabber__content {
+@media (max-width: 1050px) {
+  .p-bm6_grabber {
     display: block;
+    height: 700px;
+    padding-top: $spacing_200;
   }
-  .p-bm6_grabber__content_words--wrapper {
-      width: 100%;
-      margin-top: 0;
+}
+
+@media (max-width: 850px) {
+  .p-bm6_grabber {
+    height: 600px;
   }
-  .p-bm6_grabber__content_words {
-    margin-top: $spacing_200;
+  .p-bm6_grabber__content {
+    margin-top: 0;
   }
-  .p-bm6_grabber_illustration {
-    width: 50% !important;
-    margin: auto;
+  .p-bm6_grabber__background {
+    width: 300px;
   }
-  .p-bm6_grabber__clouds {
-    background-size: 200%;
+  .p-bm6_grabber__right_tower {
+    width: 75px;
   }
+  .p-bm6_grabber__left_tower {
+    width: 75px;
+    position: absolute;
+    bottom: 0;
+    right: 250px;
+    z-index: 3;
+  }
+  .p-bm6_grabber__back_car {
+    width: 200px;
+    position: absolute;
+    bottom: 350px;
+    right: 250px;
+    z-index: 4;
+  }
+  .p-bm6_grabber__back_car {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 400px;
+    z-index: 3;
+  }
+  .p-bm6_grabber__middle_tower {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    right: 130px;
+  }
+  .p-bm6_grabber__front_car {
+    width: 200px;
+    position: absolute;
+    bottom: 25%;
+    z-index: 7;
+    right: 150px;
+  }
+}
+@media (max-width: 450px) {
+  .p-bm6_grabber__content_topic {
+    font-size: 26px;
+  }
+  .p-bm6_grabber__content_boilermake {
+    font-size: 34px;
+  }
+  .p-bm6_grabber__content_location {
+    font-size: 14px;
+  }
+}
+
+@keyframes back_cloud {
+    0% {left: -40px;}
+    50% {left: -5px}
+    100% {left: -40px;}
+}
+@keyframes middle_cloud {
+    0% {left: -5px;}
+    50% {left: -40px}
+    100% {left: -5px;}
 }

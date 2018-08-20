@@ -8,3 +8,19 @@
 .p-home__prefooter_item {
   @include max-width;
 }
+
+.p-home__sponsor {
+  // background: $medium_mono;
+  color: $dark_mono;
+  padding: $spacing_200;
+  text-align: center;
+}
+
+.p-home__sponsor_caption {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.p-home__sponsor_action {
+  margin-top: $spacing_50;
+}

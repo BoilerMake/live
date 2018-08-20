@@ -2,34 +2,53 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'bm-kit';
 
-import Hero from '../../assets/images/SVG/hero.svg';
+import Background from '../../assets/images/hero/background.svg';
+import RightTower from '../../assets/images/hero/right_tower.svg';
+import BackCloud from '../../assets/images/hero/back_cloud.svg';
+import LeftTower from '../../assets/images/hero/left_tower.svg';
+import BackCar from '../../assets/images/hero/back_car.svg';
+import MiddleCloud from '../../assets/images/hero/middle_cloud.svg';
+import MiddleTower from '../../assets/images/hero/middle_tower.svg';
+import FrontCloud from '../../assets/images/hero/front_cloud.svg';
+import FrontCar from '../../assets/images/hero/front_car.svg';
+
 import './_pillar.bm6_grabber.source.scss';
 
 class BM6Grabber extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     return (
       <div className="p-bm6_grabber">
-        <div className="p-bm6_grabber__content">
-          <div className="col-8 p-bm6_grabber__content_words--wrapper">
-            <div className="p-bm6_grabber__content_words">
-              <h2>BoilerMake VI</h2>
-              <h1>Forge The Future</h1>
-              <h2>Oct 19th-21st, 2018</h2>
-              <h2>Purdue University</h2>
-              <Link to="/register">
-                <Button>Apply</Button>
-              </Link>
+        <div className="p-bm6_grabber__content--flex_wrapper">
+          <div className="p-bm6_grabber__content">
+            <div className="p-bm6_grabber__content_topic">Forge the Future</div>
+            <div className="p-bm6_grabber__content_boilermake">
+              at BoilerMake VI
             </div>
-          </div>
-          <div className="col-4 p-bm6_grabber_illustration">
-            <img src={Hero} width="100%" alt="BM6 Hero" />
+            <div className="p-bm6_grabber__content_location">
+              Purdue University • October 19-21, 2018
+            </div>
+            <Link to="/register">
+              <Button>Apply</Button>
+            </Link>
           </div>
         </div>
-        <div className="p-bm6_grabber__clouds" />
+        <img src={Background} className="p-bm6_grabber__background" alt="bg" />
+        <img src={RightTower} className="p-bm6_grabber__right_tower" alt="bg" />
+        <img src={BackCloud} className="p-bm6_grabber__back_cloud" alt="bg" />
+        <img src={LeftTower} className="p-bm6_grabber__left_tower" alt="bg" />
+        <img src={BackCar} className="p-bm6_grabber__back_car" alt="bg" />
+        <img
+          src={MiddleCloud}
+          className="p-bm6_grabber__middle_cloud"
+          alt="bg"
+        />
+        <img
+          src={MiddleTower}
+          className="p-bm6_grabber__middle_tower"
+          alt="bg"
+        />
+        <img src={FrontCloud} className="p-bm6_grabber__front_cloud" alt="bg" />
+        <img src={FrontCar} className="p-bm6_grabber__front_car" alt="bg" />
       </div>
     );
   }
