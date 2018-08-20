@@ -5,6 +5,7 @@ import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
 import ApplicationSelectField from './ApplicationSelectField';
 // import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
+
 import {
   raceOptions,
   genderOptions,
@@ -77,6 +78,12 @@ class ApplicationForm extends Component {
             label="Last Name"
             hasError={this.fieldHasError('last_name')}
             errorText={this.fieldErrorText('last_name')}
+          />
+          <ApplicationTextField
+            field="phone"
+            label="Phone Number"
+            hasError={this.fieldHasError('phone')}
+            errorTest={this.fieldErrorText('phone')}
           />
           <div className="p-application__form_label">School</div>
           <ApplicationSelectField
