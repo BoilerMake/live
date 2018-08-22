@@ -44,6 +44,9 @@ export function saveApplication(suppressToast = false, isRSVPAction = false) {
           if (!suppressToast) {
             if (isRSVPAction)
               toastr.success('Success!', 'Your RSVP has been saved.');
+
+            if (json.data.applicationForm.completed)
+              toastr.success('Saved!', json.data.message);
             else toastr.warning('Saved!', json.data.message);
           }
           //this api endpoint returns the updated application
