@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bm-kit": "1.4.2",
+    "bm-kit": "1.4.4",
     "chai": "^3.5.0",
     "codecov": "^2.1.0",
     "deep-freeze": "^0.0.1",

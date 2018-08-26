@@ -66,9 +66,9 @@ class ApplicationForm extends Component {
           </Card>
         ) : null}
         <Card className="p-application__form">
-          <h1>Application</h1>
+          <h1 className="p-application_title">Application</h1>
 
-          <h2>Personal</h2>
+          <h2 className="p-application_label">Personal</h2>
           <ApplicationTextField
             field="first_name"
             label="First Name"
@@ -95,7 +95,7 @@ class ApplicationForm extends Component {
             options={isFirstHackathonOptions}
           />
 
-          <h2>School</h2>
+          <h2 className="p-application_label">School</h2>
           <div className="p-application__form_label">School</div>
           <ApplicationSelectField
             field="school_id"
@@ -117,7 +117,7 @@ class ApplicationForm extends Component {
             options={gradYearOptions}
           />
 
-          <h2>Social</h2>
+          <h2 className="p-application_label">Social</h2>
           <ApplicationTextField
             field="linkedin"
             label="LinkedIn Username"
@@ -138,7 +138,7 @@ class ApplicationForm extends Component {
             </div>
           ) : null}
 
-          <h2>Other Suff</h2>
+          <h2 className="p-application_label">Other Suff</h2>
           <div className="p-application__form_label">Gender</div>
           <ApplicationSelectField field="gender" options={genderOptions} />
           <div className="p-application__form_label">Race</div>

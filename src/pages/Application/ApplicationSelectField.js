@@ -29,6 +29,7 @@ class ApplicationSelectField extends React.Component {
       <div>
         <Select
           simpleValue
+          className="p-application_select"
           multi={this.props.multi}
           joinValues={this.props.multi}
           options={transFormedData}
