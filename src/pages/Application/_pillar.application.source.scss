@@ -1,32 +1,20 @@
-@import '../../assets/tools.scss';
+@import "../../assets/tools.scss";
 
 .p-application {
   @include max-width;
-  background: #FAFAFA;
+  background: #fafafa;
   padding: $spacing_200 0;
   &:after {
     @include dark-header;
   }
 }
 
-.p-application_title {
-    padding-top: 0px;
-}
-
 .p-application__form {
   max-width: 425px;
   margin: 0 auto;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 15px;
-  color: #5E5E5E;
-  background-color: white;
-}
-
-.p-application_label {
-    font-size: 21px;
-    font-weight: normal;
-    color: black;
-    margin-top: 16px;
+  color: #5e5e5e;
 }
 
 .p-application__form h1 {
@@ -39,7 +27,6 @@
 .p-application__form_label {
   margin-top: $spacing_100;
   margin-bottom: $spacing_50;
-  font-size: 17px;
 }
 
 .p-application_resume_upload {
