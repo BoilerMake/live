@@ -19,6 +19,7 @@ class Login extends Component {
     let d = new FormData();
     d.append('email', email);
     d.append('password', password);
+
     return apiFetch('users/login', {
       method: 'POST',
       body: d

@@ -1,7 +1,6 @@
 @import '../../assets/tools.scss';
 
 .p-application {
-  @include max-width;
   background: #FAFAFA;
   padding: $spacing_200 0;
   &:after {
