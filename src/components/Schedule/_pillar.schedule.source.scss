@@ -1,0 +1,51 @@
+@import '../../assets/tools.scss';
+
+.p-schedule {
+  @include max-width;
+}
+.p-schedule__days {
+  display: flex;
+}
+.p-schedule__day {
+  flex-basis: 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+
+  &:nth-child(2) {
+    padding-left: $spacing_100;
+    padding-right: $spacing_100;
+    margin-left: $spacing_100;
+    margin-right: $spacing_100;
+  }
+}
+.p-schedule__item {
+  margin: $spacing_100 0;
+  padding: $spacing_75;
+  &:nth-child(odd) {
+    background: #FAFAFA;
+  }
+}
+.p-schedule__item_about {
+    display: flex;
+    justify-content: space-between;
+}
+.p-schedule__item_time {
+  white-space: nowrap;
+}
+.p-schedule__item_title {
+  text-align: right;
+}
+.p-schedule__item_info {
+  font-style: italic;
+  margin-top: $spacing_25;
+}
+
+@media (max-width: 720px) {
+  .p-schedule__days {
+    display: initial;
+  }
+  .p-schedule__day:nth-child(2) {
+      padding: $spacing_100;
+      margin: $spacing_100 0;
+    }
+}

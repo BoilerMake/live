@@ -139,10 +139,13 @@
 	display: none;
 	position: absolute;
 	background: #fff;
-	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	// box-shadow: 0 0 5px rgba(0,0,0,0.2);
 	border: 1px solid #e8e8e8;
 	border-radius: 4px;
   box-sizing: border-box;
+  width: 150px;
+  left: $spacing_50;
+  z-index: 2;
 }
 
 .p-nav__dropdown:hover .p-nav__dropdown_content {
@@ -158,10 +161,22 @@
 	letter-spacing: 0.4px;
   text-decoration: none;
 	color: $dark_mono;
-  border-bottom: 2px solid $light_mono;
+  position: relative;
 
-  &:hover {
-    border-bottom: 2px solid $medium_mono;
+  &:after {
+    position: absolute;
+    content: ' ';
+    width: 0%;
+    height: 2px;
+    background: $dark_mono;
+    left: $spacing_75;
+    bottom: $spacing_25;
+    transition: .2s;
+  }
+
+  &:hover:after {
+    width: 50%;
+    transition: .2s;
   }
 }
 
@@ -170,9 +185,6 @@
     width: 0px;
     height: 0px;
   }
-	// border: 1px solid $dark_mono;
-	// padding: 8px;
-	// border-radius: 4px;
 }
 
 .p-nav__mlh-badge {

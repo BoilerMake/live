@@ -1,34 +1,31 @@
 import React from 'react';
+import { Card } from 'bm-kit';
 import './_pillar.schedule.source.scss';
 
 const friday = [
   {
     start: '6:00 PM',
-    name: 'Check in begins 📋',
-    info: 'Loeb Playhouse'
+    name: '📋 Check in begins'
   },
   {
     start: '8:00 PM',
-    name: 'Opening Ceremonies 🎤',
-    info: 'Loeb Playhouse'
+    name: '🎤 Opening Ceremonies'
   },
   {
     start: '9:00 PM',
-    name: 'Team assembly 🤝',
-    info: 'CoRec Black & Gold Gyms'
+    name: '🤝 Team assembly'
   },
   {
     start: '9:30 PM',
-    name: "Dinner from Moe's 🌮",
-    info: "taco bar (yes there's  queso)"
+    name: '🌮 Dinner'
   },
   {
     start: '10:00 PM',
-    name: 'Hacking Begins 💻'
+    name: '💻 Hacking Begins'
   },
   {
     start: '11:59 PM',
-    name: 'Showers close 🚿'
+    name: 'Activity'
   }
 ];
 
@@ -39,126 +36,84 @@ let saturday = [
   },
   {
     start: '8:00 AM',
-    name: 'Breakfast 🥓',
-    info: 'eggs, potatoes, bacon, fruit, bagels'
+    name: '🥓 Breakfast'
   },
   {
-    start: '8:00 AM',
-    name: 'Showers reopen 🚿'
-  },
-  {
-    start: '8:00 AM',
-    name: 'Coffee Bar Opens ☕'
-  },
-  {
-    start: '10:00 AM',
-    name: 'A Peek into the Decentralized Future with Blockchains ⛓️',
-    info: 'CoRec 2265'
-  },
-  {
-    start: '11:30 AM',
-    name: 'Yoga 🤸'
+    start: '9:00 AM',
+    name: 'Workshop'
   },
   {
     start: '12:30 PM',
-    name: 'Lunch - Pasta Bar 🍝',
-    info: 'chicken, marinara, alfredo, veggies, salad, rolls'
-  },
-  {
-    start: '1:00 PM',
-    name: 'Snack 🍿'
-  },
-  {
-    start: '1:30 PM',
-    name: 'Yoga 🤸'
+    name: '🍝 Lunch'
   },
   {
     start: '3:00 PM',
-    name:
-      'The New Frontiers in Systems Level Data Sciences and Human Space Exploration 🚀',
-    info: 'CoRec 2265'
+    name: '🍿 Snack'
   },
   {
-    start: '4:30 PM',
-    name: 'MLH Cup Stacking 🎲2'
+    start: '3:00 PM',
+    name: 'Activity'
   },
   {
     start: '6:00 PM',
-    name: 'Dinner from Hotbox 🍕',
-    info: 'pizza, breadsticks, salad'
+    name: 'Dinner'
   },
   {
     start: '10:00 PM',
-    name: 'Coffee Bar Closes ☕'
-  },
-  {
-    start: '10:00 PM',
-    name: 'Donuts! 🍩 '
-  },
-  {
-    start: '11:59 PM',
-    name: 'Showers close🚿'
+    name: 'Donuts!'
   }
 ];
 
 let sunday = [
   {
     start: '1:00 AM',
-    name: 'Late Night Snack 🍿'
+    name: '🍿 Late Night Snack'
   },
   {
     start: '8:00 AM',
-    name: 'Breakfast 🍳',
-    info: 'egg casseroles, potatoes, fruit, yogurt, bagels, pastries'
+    name: '🍳 Breakfast'
   },
   {
     start: '9:30 AM',
-    name: 'Hacking Ends 🛑'
+    name: '🛑 Hacking Ends'
   },
   {
     start: '10:00 AM',
-    name: 'Expo Begins 📔'
-  },
-  {
-    start: '10:00 AM',
-    name: 'Showers reopen 🚿'
+    name: '📔 Expo Begins'
   },
   {
     start: '11:30 AM',
-    name: 'Lunch from Potbelly 🍞',
-    info: 'sandwiches'
+    name: '🍞 Lunch'
   },
   {
     start: '1:00 PM',
-    name: 'Closing Ceremonies 🎭',
-    info: 'Loeb Playhouse'
+    name: '🎭 Closing Ceremonies'
   },
   {
     start: '2:30 PM',
-    name: 'Buses Depart 🚌',
-    info: 'Loeb Playhouse'
+    name: '🚌 Buses Depart'
   }
 ];
 
 const ScheduleDay = ({ dayData, title }) => (
-  <div className="col-4 paddingx">
-    <h3 className="center">{title}</h3>
+  <Card className="p-schedule__day">
+    <h3 className="text-center">{title}</h3>
     {dayData.map(item => (
-      <div className="schedule-item" key={item.name + item.start}>
-        <div className="time">{item.start}</div>
-        <div className="event">
-          {item.name} <br />
-          <i>{item.info}</i>
+      <div className="p-schedule__item" key={item.name + item.start}>
+        <div className="p-schedule__item_about">
+          <span className="p-schedule__item_time">{item.start}</span>
+          <span className="p-schedule__item_title">{item.name}</span>
         </div>
+        <div className="p-schedule__item_info">{item.info}</div>
       </div>
     ))}
-  </div>
+  </Card>
 );
 
 const Schedule = () => (
-  <div className="schedule">
-    <h1 className="center title">Schedule</h1>
-    <div className="row">
+  <div className="p-schedule">
+    <h1>Schedule</h1>
+    <div className="p-schedule__days">
       <ScheduleDay dayData={friday} title="Friday (10/19)" />
       <ScheduleDay dayData={saturday} title="Saturday (10/20)" />
       <ScheduleDay dayData={sunday} title="Sunday (10/21)" />

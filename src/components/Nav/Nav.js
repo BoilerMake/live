@@ -99,14 +99,14 @@ class Nav extends Component {
                     FAQ
                   </NavLink>
                   <NavLink exact to="/hackers" className="p-nav__dropdown_link">
-                    Hackers
+                    Why Hack?
                   </NavLink>
                   <NavLink
                     exact
                     to="/sponsors"
                     className="p-nav__dropdown_link"
                   >
-                    Sponsors
+                    Why Sponsor?
                   </NavLink>
                   <NavLink exact to="/about" className="p-nav__dropdown_link">
                     Team
@@ -123,10 +123,10 @@ class Nav extends Component {
               </NavLink>
               <div className="p-nav__dropdown_content">
                 <NavLink exact to="/hackers" className="p-nav__dropdown_link">
-                  Hackers
+                  Why Hack?
                 </NavLink>
                 <NavLink exact to="/sponsors" className="p-nav__dropdown_link">
-                  Sponsors
+                  Why Sponsor?
                 </NavLink>
                 <NavLink exact to="/about" className="p-nav__dropdown_link">
                   Team

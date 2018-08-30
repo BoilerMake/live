@@ -1,0 +1,52 @@
+@import '../../assets/tools.scss';
+
+.p-floating_images {
+  width: 100%;
+  display: flex;
+  margin-top: $spacing_200;
+
+  @include max-width;
+
+  &:last-child {
+    margin-bottom: $spacing_200;
+  }
+}
+.p-floating_images__image_wrapper {
+  width: 25%;
+  padding: 0 $spacing_100;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+.p-floating_images__image {
+  width: 100%;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .p-floating_images__image_wrapper:nth-child(odd) {
+    display: none;
+  }
+  .p-floating_images__image_wrapper {
+    width: 50%;
+  }
+}
+@keyframes image {
+  0% {
+    top: 0;
+  }
+  33% {
+    top: -$spacing_100;
+  }
+  66% {
+    top: $spacing_100;
+  }
+  100% {
+    top: 0;
+  }
+}
