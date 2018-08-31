@@ -4,6 +4,9 @@
   @include max-width;
   text-align: center;
 }
+.p-landing_sponsors__sponsors {
+  padding: $spacing_200;
+}
 .p-landing_sponsors__top {
   text-align: center;
 }
@@ -15,7 +18,6 @@
   align-items: center;
   margin-top: $spacing_200;
   text-align: center;
-  margin-bottom: $spacing_200;
 }
 .p-landing_sponsors__medium img {
   flex-basis: 300px;

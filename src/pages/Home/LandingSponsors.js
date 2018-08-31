@@ -17,16 +17,18 @@ export default class LandingSponsors extends PureComponent {
     return (
       <div className="p-landing_sponsors">
         <h1>Sponsors</h1>
-        <div className="p-landing_sponsors__top">
-          <img alt="sponsor" src={RC} />
-        </div>
-        <div className="p-landing_sponsors__medium">
-          <img alt="sponsor" src={Qualcomm} />
-          <img alt="sponsor" src={MongoDB} />
-          <img alt="sponsor" src={Bloomberg} />
-          <img alt="sponsor" src={SEP} />
-          <img alt="sponsor" src={LibertyMutual} />
-        </div>
+        <Card className="p-landing_sponsors__sponsors">
+          <div className="p-landing_sponsors__top">
+            <img alt="sponsor" src={RC} />
+          </div>
+          <div className="p-landing_sponsors__medium">
+            <img alt="sponsor" src={Qualcomm} />
+            <img alt="sponsor" src={MongoDB} />
+            <img alt="sponsor" src={Bloomberg} />
+            {/* <img alt="sponsor" src={SEP} /> */}
+            <img alt="sponsor" src={LibertyMutual} />
+          </div>
+        </Card>
         <Card className="p-landing_sponsors__partners">
           <h3>Partners</h3>
           <img alt="sponsor" src={SFAB} />
