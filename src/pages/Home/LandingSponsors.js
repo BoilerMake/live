@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Card } from 'bm-kit';
+// import { Card } from 'bm-kit';
 
 import RC from '../../assets/images/sponsors/Rockwell_Collins.svg';
 import Qualcomm from '../../assets/images/sponsors/Qualcomm.svg';
 import MongoDB from '../../assets/images/sponsors/MongoDB.png';
 import Bloomberg from '../../assets/images/sponsors/bloomberg.svg';
-import SEP from '../../assets/images/sponsors/sep.png';
+// import SEP from '../../assets/images/sponsors/sep.png';
 import LibertyMutual from '../../assets/images/sponsors/Liberty_Mutual.svg';
 
 import SFAB from '../../assets/images/sponsors/sfab.jpg';
@@ -17,7 +17,7 @@ export default class LandingSponsors extends PureComponent {
     return (
       <div className="p-landing_sponsors">
         <h1>Sponsors</h1>
-        <Card className="p-landing_sponsors__sponsors">
+        <div className="p-landing_sponsors__sponsors">
           <div className="p-landing_sponsors__top">
             <img alt="sponsor" src={RC} />
           </div>
@@ -28,11 +28,13 @@ export default class LandingSponsors extends PureComponent {
             {/* <img alt="sponsor" src={SEP} /> */}
             <img alt="sponsor" src={LibertyMutual} />
           </div>
-        </Card>
-        <Card className="p-landing_sponsors__partners">
-          <h3>Partners</h3>
-          <img alt="sponsor" src={SFAB} />
-        </Card>
+          {/* </div> */}
+          <div className="p-landing_sponsors__partners">
+            <hr />
+            <h3>Partners</h3>
+            <img alt="sponsor" src={SFAB} />
+          </div>
+        </div>
       </div>
     );
   }

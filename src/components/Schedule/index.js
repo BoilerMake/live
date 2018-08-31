@@ -24,15 +24,15 @@ const friday = [
     name: '💻 Hacking Begins'
   },
   {
-    start: '11:59 PM',
-    name: 'Activity'
+    start: '11:00 PM',
+    name: '⛷ Activity'
   }
 ];
 
 let saturday = [
   {
     start: '3:00 AM',
-    name: 'Late Night Snack'
+    name: '🍿 Late Night Snack'
   },
   {
     start: '8:00 AM',
@@ -40,7 +40,7 @@ let saturday = [
   },
   {
     start: '9:00 AM',
-    name: 'Workshop'
+    name: '🏗 Workshop'
   },
   {
     start: '12:30 PM',
@@ -52,15 +52,15 @@ let saturday = [
   },
   {
     start: '3:00 PM',
-    name: 'Activity'
+    name: '🚣🏽 Activity'
   },
   {
     start: '6:00 PM',
-    name: 'Dinner'
+    name: '🍕 Dinner'
   },
   {
     start: '10:00 PM',
-    name: 'Donuts!'
+    name: '🍩 Donuts!'
   }
 ];
 

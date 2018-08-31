@@ -14,7 +14,6 @@
   width: 50%;
 }
 .p-landing_sponsors__medium {
-  // display: flex;
   align-items: center;
   margin-top: $spacing_200;
   text-align: center;
@@ -35,4 +34,15 @@
 }
 .p-landing_sponsors__partners h3 {
   margin-top: 0;
+}
+@media (max-width: 540px) {
+  .p-landing_sponsors__top img {
+    width: 85%;
+  }
+  .p-landing_sponsors__medium img {
+    width: 50%;
+  }
+  .p-landing_sponsors__partners img {
+    width: 50%;
+  }
 }

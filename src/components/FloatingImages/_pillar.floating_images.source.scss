@@ -32,6 +32,9 @@
   .p-floating_images__image_wrapper:nth-child(odd) {
     display: none;
   }
+  .p-floating_images__image_wrapper:nth-child(2) {
+    padding-left: 0;
+  }
   .p-floating_images__image_wrapper {
     width: 50%;
   }
