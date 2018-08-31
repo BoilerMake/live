@@ -2,6 +2,7 @@
 
 .p-schedule {
   @include max-width;
+  text-align: center;
 }
 .p-schedule__days {
   display: flex;

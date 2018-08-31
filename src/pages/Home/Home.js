@@ -6,7 +6,7 @@ import FloatingImages from '../../components/FloatingImages';
 
 import MailChimpSignup from './MailChimpSignup';
 import BM6Grabber from './BM6-Grabber';
-// import ImageDivider from './ImageDivider';
+import LandingSponsors from './LandingSponsors';
 import PreFooter from './Home_PreFooter';
 import Images from './images';
 
@@ -76,9 +76,11 @@ const Home = () => (
         </div>
       </div>
     )}
+    <LandingSponsors />
     <FloatingImages
       images={[Images.five, Images.six, Images.seven, Images.eight]}
     />
+
     {bm6 ? null : (
       <div className="max-width home" style={{ margin: '80px auto' }}>
         <div className="col-8" style={{ margin: '0 auto' }}>

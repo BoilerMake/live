@@ -1,0 +1,36 @@
+@import '../../assets/tools.scss';
+
+.p-landing_sponsors {
+  @include max-width;
+  text-align: center;
+}
+.p-landing_sponsors__top {
+  text-align: center;
+}
+.p-landing_sponsors__top img {
+  width: 50%;
+}
+.p-landing_sponsors__medium {
+  // display: flex;
+  align-items: center;
+  margin-top: $spacing_200;
+  text-align: center;
+  margin-bottom: $spacing_200;
+}
+.p-landing_sponsors__medium img {
+  flex-basis: 300px;
+  height: auto;
+  width: 23%;
+  margin: 0 $spacing_100;
+  margin-top: $spacing_200;
+}
+.p-landing_sponsors__partners {
+  margin-top: $spacing_200;
+  text-align: center;
+}
+.p-landing_sponsors__partners img {
+  width: 25%;
+}
+.p-landing_sponsors__partners h3 {
+  margin-top: 0;
+}
