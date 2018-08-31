@@ -3,6 +3,17 @@
 .p-schedule {
   @include max-width;
   text-align: center;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -30px;
+    height: 50px;
+    background: linear-gradient(to bottom, #ffffff 0%,#fafafa 100%);;
+    z-index: 10;
+  }
 }
 .p-schedule__days {
   display: flex;

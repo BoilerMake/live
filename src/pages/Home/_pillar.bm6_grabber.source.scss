@@ -10,16 +10,6 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 600px;
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    background: red;
-  }
 }
 .p-bm6_grabber__content--flex_wrapper{
   width: 100%;

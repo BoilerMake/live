@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-// import { Card } from 'bm-kit';
+import { Card } from 'bm-kit';
 
 import RC from '../../assets/images/sponsors/Rockwell_Collins.svg';
 import Qualcomm from '../../assets/images/sponsors/Qualcomm.svg';
@@ -17,7 +17,7 @@ export default class LandingSponsors extends PureComponent {
     return (
       <div className="p-landing_sponsors">
         <h1>Sponsors</h1>
-        <div className="p-landing_sponsors__sponsors">
+        <Card className="p-landing_sponsors__sponsors">
           <div className="p-landing_sponsors__top">
             <img alt="sponsor" src={RC} />
           </div>
@@ -34,7 +34,7 @@ export default class LandingSponsors extends PureComponent {
             <h3>Partners</h3>
             <img alt="sponsor" src={SFAB} />
           </div>
-        </div>
+        </Card>
       </div>
     );
   }
