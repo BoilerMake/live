@@ -71,7 +71,7 @@ const questions = [
   {
     title: 'Will there be any hardware?',
     body:
-      "We will have a bunch hardware available for hackers to borrow at the event with some help from our friends at Major League Hacking.  We'll be sure to let you guys know once we have the list of hardware finalized."
+      "We will have a bunch of hardware available for hackers to borrow at the event with some help from our friends at Major League Hacking.  We'll be sure to let you guys know once we have the list of hardware finalized."
   },
   {
     title: 'What if I have any other questions?',
