@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Card } from 'bm-kit';
 
-import Hr from '../../components/HR';
+import Hr from '../../components/Hr';
 
 import RC from '../../assets/images/sponsors/Rockwell_Collins.svg';
 import Qualcomm from '../../assets/images/sponsors/Qualcomm.svg';
