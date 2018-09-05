@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
 import { Card } from 'bm-kit';
 
+import Hr from '../../components/HR';
+
 import RC from '../../assets/images/sponsors/Rockwell_Collins.svg';
 import Qualcomm from '../../assets/images/sponsors/Qualcomm.svg';
 import MongoDB from '../../assets/images/sponsors/MongoDB.png';
 import Bloomberg from '../../assets/images/sponsors/bloomberg.svg';
 // import SEP from '../../assets/images/sponsors/sep.png';
 import LibertyMutual from '../../assets/images/sponsors/Liberty_Mutual.svg';
+import FB from '../../assets/images/sponsors/facebook.svg';
 
 import SFAB from '../../assets/images/sponsors/sfab.jpg';
 
@@ -22,16 +25,19 @@ export default class LandingSponsors extends PureComponent {
             <img alt="sponsor" src={RC} />
           </div>
           <div className="p-landing_sponsors__medium">
-            <img alt="sponsor" src={Qualcomm} />
-            <img alt="sponsor" src={MongoDB} />
-            <img alt="sponsor" src={Bloomberg} />
+            <img alt="Qualcomm" src={Qualcomm} />
+            <img
+              alt="MongoDB"
+              src={MongoDB}
+              className="p-landing_sponsors__medium--mongo"
+            />
+            <img alt="Bloomberg" src={Bloomberg} />
             {/* <img alt="sponsor" src={SEP} /> */}
-            <img alt="sponsor" src={LibertyMutual} />
+            <img alt="Facebook" src={FB} />
+            <img alt="Liberty Mutual" src={LibertyMutual} />
           </div>
-          {/* </div> */}
           <div className="p-landing_sponsors__partners">
-            <hr />
-            <h3>Partners</h3>
+            <Hr>Partners</Hr>
             <img alt="sponsor" src={SFAB} />
           </div>
         </Card>

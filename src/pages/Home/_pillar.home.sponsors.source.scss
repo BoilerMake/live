@@ -17,13 +17,18 @@
   align-items: center;
   margin-top: $spacing_200;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .p-landing_sponsors__medium img {
-  flex-basis: 300px;
+  flex-basis: 250px;
   height: auto;
-  width: 23%;
-  margin: 0 $spacing_100;
+  margin: 0 $spacing_200;
   margin-top: $spacing_200;
+}
+.p-landing_sponsors__medium--mongo {
+  margin-top: -$spacing_50 !important;
 }
 .p-landing_sponsors__partners {
   margin-top: $spacing_200;
@@ -31,10 +36,13 @@
 }
 .p-landing_sponsors__partners img {
   width: 25%;
+  margin-top: $spacing_200;
 }
 .p-landing_sponsors__partners h3 {
   margin-top: 0;
+  color: $medium_mono;
 }
+
 @media (max-width: 540px) {
   .p-landing_sponsors__top img {
     width: 85%;
@@ -44,5 +52,10 @@
   }
   .p-landing_sponsors__partners img {
     width: 50%;
+  }
+}
+@media (max-width: 770px) {
+  .p-landing_sponsors__medium--mongo {
+    margin-top: $spacing_200 !important;
   }
 }
