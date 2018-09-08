@@ -26,7 +26,7 @@ deploy:
   # Prevent Travis from deleting your built site so it can be uploaded.
   skip_cleanup: true
   local_dir: build
-  cache_control: "max-age=180"
+  cache_control: "max-age=180, must-revalidate"
 after_deploy:
   # Allow `awscli` to make requests to CloudFront.
   - aws configure set preview.cloudfront true
