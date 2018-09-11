@@ -10,7 +10,7 @@ import Bloomberg from '../../assets/images/sponsors/bloomberg.svg';
 import USAA from '../../assets/images/sponsors/usaa.svg';
 import LibertyMutual from '../../assets/images/sponsors/Liberty_Mutual.svg';
 import FB from '../../assets/images/sponsors/facebook.svg';
-
+import SEP from '../../assets/images/sponsors/sep.png';
 import SFAB from '../../assets/images/sponsors/sfab.jpg';
 
 import './_pillar.home.sponsors.source.scss';
@@ -39,6 +39,7 @@ export default class LandingSponsors extends PureComponent {
             />
             <img alt="Facebook" src={FB} />
             <img alt="Liberty Mutual" src={LibertyMutual} />
+            <img alt="SEP" src={SEP} />
           </div>
           <div className="p-landing_sponsors__partners">
             <Hr>Partners</Hr>
