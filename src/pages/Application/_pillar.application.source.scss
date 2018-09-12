@@ -50,6 +50,12 @@
   margin-top: -$spacing_50;
   font-size: 12px;
 }
+.c-application__validation_note {
+  text-align: left;
+  font-size: 12px;
+  margin-top: $spacing_50;
+  color: #F7883F;
+}
 .p-application__form_tanc {
   margin-top: $spacing_100;
 }
@@ -60,7 +66,7 @@
 
 .p-application__status_card {
   margin: auto;
-  margin-top: $spacing_200;
+  margin-bottom: $spacing_200;
   max-width: 500px;
   background: $light_green;
   text-align: center;

@@ -4,6 +4,8 @@ import { Card, Button } from 'bm-kit';
 import ApplicationTextField from './ApplicationTextField';
 import ApplicationToggle from './ApplicationToggle';
 import ApplicationSelectField from './ApplicationSelectField';
+import ApplicationCompletedCard from './ApplicationCompletedCard';
+import ValidationError from './ValidationError';
 // import ResumeUploadProgressIndicator from './ResumeUploadProgressIndicator';
 
 import {
@@ -46,25 +48,7 @@ class ApplicationForm extends Component {
         onDrop={this.props.onResumeDrop.bind(this)}
         style={{ border: 'none', height: '100%' }}
       >
-        {applicationForm.completed ? (
-          <Card className="p-application__status_card">
-            <p>
-              Hey there{' '}
-              <span role="img" aria-label="wave">
-                👋
-              </span>{' '}
-              just a heads up! Your application is complete and is under review.
-              Expect to hear back by October 10th at the latest.
-            </p>
-            <p>
-              In the mean time, follow us on{' '}
-              <a href="https://twitter.com/boilermake1">Twitter</a>
-              ,&nbsp;
-              <a href="https://facebook.com/boilermake">Facebook</a>, or&nbsp;
-              <a href="https://instagram.com/boilermake">Instagram</a>
-            </p>
-          </Card>
-        ) : null}
+        <ApplicationCompletedCard show={applicationForm.completed} />
         <Card className="p-application__form">
           <h1 className="p-application_title">Application</h1>
 
@@ -84,8 +68,8 @@ class ApplicationForm extends Component {
           <ApplicationTextField
             field="phone"
             label="Phone Number"
-            hasError={this.fieldHasError('phone')}
-            errorTest={this.fieldErrorText('phone')}
+            hasError={this.props.application.applicationForm.phone === null}
+            errorText="Phone number not set"
           />
           <div className="p-application__form_label">
             Is this your first hackathon?
@@ -93,6 +77,10 @@ class ApplicationForm extends Component {
           <ApplicationSelectField
             field="isFirstHackathon"
             options={isFirstHackathonOptions}
+          />
+          <ValidationError
+            field="isFirstHackathon"
+            validation={this.props.application.validation}
           />
 
           <h2 className="p-application_label">School</h2>
@@ -102,6 +90,11 @@ class ApplicationForm extends Component {
             searchable
             options={this.props.schools}
           />
+          <ValidationError
+            field="school_id"
+            validation={this.props.application.validation}
+          />
+
           <ApplicationTextField
             field="major"
             label="Major"
@@ -115,6 +108,10 @@ class ApplicationForm extends Component {
             field="grad_year"
             searchable
             options={gradYearOptions}
+          />
+          <ValidationError
+            field="grad_year"
+            validation={this.props.application.validation}
           />
 
           <h2 className="p-application_label">Social</h2>
@@ -141,8 +138,16 @@ class ApplicationForm extends Component {
           <h2 className="p-application_label">Other Suff</h2>
           <div className="p-application__form_label">Gender</div>
           <ApplicationSelectField field="gender" options={genderOptions} />
+          <ValidationError
+            field="gender"
+            validation={this.props.application.validation}
+          />
           <div className="p-application__form_label">Race</div>
           <ApplicationSelectField field="race" options={raceOptions} />
+          <ValidationError
+            field="race"
+            validation={this.props.application.validation}
+          />
           <div className="p-application_resume_upload">
             <Button
               type="button"
@@ -166,6 +171,10 @@ class ApplicationForm extends Component {
                 </a>
               </p>
             ) : null}
+            <ValidationError
+              field="resume_filename"
+              validation={this.props.application.validation}
+            />
           </div>
 
           <div className="p-application__form_tanc flex v-center">
