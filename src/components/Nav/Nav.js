@@ -139,9 +139,15 @@ class Nav extends Component {
               FAQ
             </NavLink>
             {user.authenticated ? (
-              <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
-                Logout
-              </a>
+              <span>
+                <NavLink exact to="/dashboard" className="p-nav__nav_link">
+                  Dashboard
+                </NavLink>
+
+                <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+                  Logout
+                </a>
+              </span>
             ) : (
               <NavLink exact to="/login" className="p-nav__nav_link">
                 Login
