@@ -1,0 +1,43 @@
+@import '../../assets/tools.scss';
+
+.p-dashboard {
+  @include max-width;
+}
+
+.p-dashboard__content_wrapper {
+  display: flex;
+  margin-bottom: $spacing_100;
+}
+
+.p-dashboard__application {
+  width: 50%;
+  margin-right: $spacing_50;
+}
+
+.p-dashboard__content_wrapper h2 {
+  margin-top: 0;
+}
+
+.p-dashboard__application_link {
+  margin-bottom: $spacing_100;
+}
+
+.p-dashboard__team_members {
+  width: 50%;
+  margin-left: $spacing_50;
+  box-sizing: border-box;
+}
+
+@media (max-width: 575px) {
+  .p-dashboard__content_wrapper {
+    display: block;
+  }
+  .p-dashboard__application {
+    width: 100%;
+  }
+  .p-dashboard__team_members {
+    width: 100%;
+    margin-left: 0;
+    margin-top: $spacing_100;
+  }
+}
