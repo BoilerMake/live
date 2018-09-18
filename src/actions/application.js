@@ -34,9 +34,11 @@ function receiveApplication(json, onlyUpdateNonFormFields = false) {
 export function saveApplication(suppressToast = false, isRSVPAction = false) {
   return (dispatch, getState) => {
     let data = getState().application.applicationForm;
-    window.FS.setUserVars({
-      displayName: `${data.first_name} ${data.last_name}`
-    });
+    if (window.FS) {
+      window.FS.setUserVars({
+        displayName: `${data.first_name} ${data.last_name}`
+      });
+    }
     return apiFetch('users/me/application', {
       method: 'PUT',
       body: JSON.stringify(data)
