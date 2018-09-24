@@ -23,8 +23,12 @@ export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case LOGIN_FROM_JWT_SUCCESS:
       let token_data = jwtDecode(action.token);
-      let isHacker = token_data.roles.includes('hacker');
-      let isExec = token_data.roles.includes('exec');
+      let isHacker = false,
+        isExec = false;
+      if (token_data.roles) {
+        isHacker = token_data.roles.includes('hacker');
+        isExec = token_data.roles.includes('exec');
+      }
       return {
         ...state,
         authenticated: true,

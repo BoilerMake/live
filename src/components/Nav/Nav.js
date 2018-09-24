@@ -66,7 +66,9 @@ class Nav extends Component {
                         to="/application"
                         className="p-nav__dropdown_link--apply"
                       >
-                        <Button>Application</Button>
+                        <Button>
+                          {user.isExec ? 'Exec Dashboard' : 'Application'}
+                        </Button>
                       </NavLink>
                     ) : (
                       <NavLink
@@ -151,7 +153,9 @@ class Nav extends Component {
                 to="/application"
                 className="p-nav__nav_link p-nav__nav_link--apply"
               >
-                <Button>Application</Button>
+                <Button>
+                  {user.isExec ? 'Exec Dashboard' : 'Application'}
+                </Button>
               </NavLink>
             ) : (
               <NavLink

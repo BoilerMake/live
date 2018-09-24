@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import ApplicationDecision from './ApplicationDecision';
 import ApplicationForm from './ApplicationForm';
 
@@ -13,6 +14,9 @@ class Application extends Component {
 
   render() {
     let { me } = this.props.user;
+    if (this.props.user.isExec) {
+      return <Redirect to="/exec" />;
+    }
     let { applicationForm, loading } = this.props.application;
     let doesUserHaveDecision =
       applicationForm.decision !== null &&
@@ -21,11 +25,7 @@ class Application extends Component {
 
     let content;
     if (!me || !applicationForm || loading) {
-      content = (
-        <div>
-          <h1>Loading...</h1>
-        </div>
-      );
+      content = <div>{/* <h1>Loading...</h1> */}</div>;
     } else if (doesUserHaveDecision) {
       content = <ApplicationDecision />;
     } else {
