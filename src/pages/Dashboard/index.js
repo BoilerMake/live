@@ -24,8 +24,6 @@ class Application extends Component {
       applicationForm.decision !== null &&
       applicationForm.decision !== undefined &&
       applicationForm.decision !== 0;
-    console.log('POOPOPOPO');
-    console.log(applicationForm);
 
     return (
       <div className="p-dashboard">
