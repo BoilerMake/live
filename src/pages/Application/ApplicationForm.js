@@ -38,7 +38,6 @@ class ApplicationForm extends Component {
       this.props.user.me && this.props.user.me.github_user_id !== null;
     let dropzoneRef;
 
-    const phone = this.props.application.applicationForm.phone;
     return (
       <Dropzone
         ref={node => {
