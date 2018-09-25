@@ -70,8 +70,8 @@ class ApplicationForm extends Component {
           <ApplicationTextField
             field="phone"
             label="Phone Number"
-            hasError={phone === null}
-            errorText={phone === null ? 'Phone number not set' : null}
+            hasError={this.fieldHasError('phone')}
+            errorText={this.fieldErrorText('phone')}
           />
           <div className="p-application__form_label">
             Is this your first hackathon?
