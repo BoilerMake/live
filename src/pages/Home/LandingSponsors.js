@@ -13,6 +13,8 @@ import FB from '../../assets/images/sponsors/facebook.svg';
 import SEP from '../../assets/images/sponsors/sep.png';
 import Intel from '../../assets/images/sponsors/intel.svg';
 import SFAB from '../../assets/images/sponsors/sfab.jpg';
+import PurdueEngineering from '../../assets/images/sponsors/purdue_engineering.png';
+import GC from '../../assets/images/sponsors/google_cloud.png';
 
 import './_pillar.home.sponsors.source.scss';
 
@@ -46,10 +48,12 @@ export default class LandingSponsors extends PureComponent {
               src={USAA}
             />
             <img alt="SEP" src={SEP} />
+            <img alt="Google Cloud Platform" src={GC} />
           </div>
           <div className="p-landing_sponsors__partners">
             <Hr>Partners</Hr>
-            <img alt="sponsor" src={SFAB} />
+            <img alt="SFAB" src={SFAB} />
+            <img alt="Purdue Engineering" src={PurdueEngineering} />
           </div>
         </Card>
       </div>
