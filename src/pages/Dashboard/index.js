@@ -7,14 +7,46 @@ import { Card, Button, TextInput } from 'bm-kit';
 import ApplicationDecision from '../Application/ApplicationDecision';
 
 import { fetchApplication } from '../../actions/application';
-import { fetchMe } from '../../actions/users';
+import {
+  fetchMe,
+  updateTeamProjectDetails,
+  fetchTeamProjectDetails
+} from '../../actions/users';
 
 import './_pillar.dashboard.source.scss';
 
 class Application extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      projectIdea: '',
+      teamMembers: ['', '', '']
+    };
+
+    this.handleTeamMemberChange = this.handleTeamMemberChange.bind(this);
+    this.handleProjectChange = this.handleProjectChange.bind(this);
+    this.submitProjectTeamInfo = this.submitProjectTeamInfo.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchMe();
     this.props.fetchApplication();
+  }
+
+  handleTeamMemberChange(e, i) {
+    const teamMembers = this.state.teamMembers;
+    teamMembers[i] = e.target.value;
+
+    this.setState({ teamMembers });
+  }
+
+  handleProjectChange(e) {
+    this.setState({ projectIdea: e.target.value });
+  }
+
+  submitProjectTeamInfo() {
+    this.props.updateTeamProjectDetails(this.state);
   }
 
   render() {
@@ -49,7 +81,10 @@ class Application extends Component {
             <Card className="">
               <h2>Project Idea</h2>
               <p>Breifly let us know what you plan to make!</p>
-              <TextInput />
+              <TextInput
+                value={this.state.projectIdea}
+                onChange={e => this.handleProjectChange(e)}
+              />
               <Button>Save</Button>
             </Card>
           </div>
@@ -59,10 +94,18 @@ class Application extends Component {
               You can add up to three team members. Let us know their name, or
               email they used to sign up.
             </p>
-            <TextInput label="Team Member 1" />
-            <TextInput label="Team Member 2" />
-            <TextInput label="Team Member 3" />
-            <Button>Save</Button>
+
+            {this.state.teamMembers.map((teamMembers, i) => {
+              return (
+                <TextInput
+                  value={this.state.teamMembers[i]}
+                  label={`Team Member ${i + 1}`}
+                  onChange={e => this.handleTeamMemberChange(e, i)}
+                  key={i}
+                />
+              );
+            })}
+            <Button onClick={this.submitProjectTeamInfo}>Save</Button>
           </Card>
         </div>
 
@@ -83,7 +126,8 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       fetchApplication,
-      fetchMe
+      fetchMe,
+      updateTeamProjectDetails
     },
     dispatch
   );

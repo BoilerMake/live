@@ -3,7 +3,8 @@ import {
   RECEIVE_ME,
   REQUEST_ME,
   LOGOUT_USER,
-  SHOW_GITHUB_EMAIL_ERROR_MESSAGE
+  SHOW_GITHUB_EMAIL_ERROR_MESSAGE,
+  RECEIVE_PROJECT_DETAILS
 } from '../actions/users';
 
 import jwtDecode from 'jwt-decode';
@@ -16,7 +17,8 @@ const INITIAL_STATE = {
   error: null,
   loading: false,
   token: null,
-  showGithubEmailErrorMessage: false
+  showGithubEmailErrorMessage: false,
+  teamProjectDetails: null
 };
 
 export default function(state = INITIAL_STATE, action) {
@@ -53,6 +55,11 @@ export default function(state = INITIAL_STATE, action) {
       return {
         ...state,
         showGithubEmailErrorMessage: true
+      };
+    case RECEIVE_PROJECT_DETAILS:
+      return {
+        ...state,
+        teamProjectDetails: action.teamProjectDetails
       };
     default:
       return state;

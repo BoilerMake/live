@@ -4,7 +4,16 @@ import ReactGA from 'react-ga';
 import apiFetch, { recordStatEvent } from './index';
 import { toastr } from 'react-redux-toastr';
 
+// CONSTANTS
 export const LOGIN_FROM_JWT_SUCCESS = 'LOGIN_FROM_JWT_SUCCESS';
+export const REQUEST_ME = 'REQUEST_ME';
+export const RECEIVE_ME = 'RECEIVE_ME';
+export const RECEIVE_PROJECT_DETAILS = 'RECEIVE_PROJECT_DETAILS';
+export const SHOW_GITHUB_EMAIL_ERROR_MESSAGE =
+  'SHOW_GITHUB_EMAIL_ERROR_MESSAGE';
+export const LOGOUT_USER = 'LOGOUT_USER';
+
+// ACTIONS
 export function loginFromJWT(token) {
   cookie.save('token', token, { path: '/' });
   return dispatch => {
@@ -18,13 +27,6 @@ export function loginFromJWT(token) {
   };
 }
 
-function saveToken(token) {
-  return {
-    type: LOGIN_FROM_JWT_SUCCESS,
-    token: token
-  };
-}
-export const LOGOUT_USER = 'LOGOUT_USER';
 export function logoutUser() {
   return function(dispatch) {
     dispatch({ type: LOGOUT_USER });
@@ -32,9 +34,6 @@ export function logoutUser() {
     cookie.remove('token', { path: '/' });
   };
 }
-
-export const REQUEST_ME = 'REQUEST_ME';
-export const RECEIVE_ME = 'RECEIVE_ME';
 
 export function fetchMe() {
   return (dispatch, getState) => {
@@ -48,23 +47,6 @@ export function fetchMe() {
         });
         dispatch(receiveMe(json));
       });
-  };
-}
-
-function requestMe() {
-  return {
-    type: REQUEST_ME
-  };
-}
-
-function receiveMe(json) {
-  if ('error' in json) {
-    json = null;
-  }
-  return {
-    type: RECEIVE_ME,
-    me: json,
-    receivedAt: Date.now()
   };
 }
 
@@ -86,13 +68,6 @@ export function updateMe(me) {
 export function recordEvent(event, subtitle, context) {
   return (dispatch, getState) => {
     return recordStatEvent(event, subtitle, context);
-  };
-}
-export const SHOW_GITHUB_EMAIL_ERROR_MESSAGE =
-  'SHOW_GITHUB_EMAIL_ERROR_MESSAGE';
-function showGitHubEmailErrorMessage() {
-  return {
-    type: SHOW_GITHUB_EMAIL_ERROR_MESSAGE
   };
 }
 
@@ -127,6 +102,7 @@ export function authUserWithGithub(code) {
       });
   };
 }
+
 export function confirmEmail(code) {
   return dispatch => {
     return apiFetch(`users/verify/${code}`, {
@@ -142,5 +118,67 @@ export function confirmEmail(code) {
           toastr.error('Error', json.message);
         }
       });
+  };
+}
+
+export function updateTeamProjectDetails(details) {
+  console.log(details);
+  return dispatch => {
+    return apiFetch('users/project', {
+      method: 'PUT',
+      body: JSON.stringify(details)
+    })
+      .then(response => response.json())
+      .then(json => {
+        if (json.success) toastr.success('Success!', 'Project Details Saved');
+      });
+  };
+}
+
+export function fetchTeamProjectDetails() {
+  return (dispatch, getState) => {
+    return apiFetch('users/project')
+      .then(response => response.json())
+      .then(json => {
+        dispatch(receiveProjectDetails(json));
+      });
+  };
+}
+
+// TO REDUCER
+function saveToken(token) {
+  return {
+    type: LOGIN_FROM_JWT_SUCCESS,
+    token: token
+  };
+}
+
+function requestMe() {
+  return {
+    type: REQUEST_ME
+  };
+}
+
+function receiveMe(json) {
+  if ('error' in json) {
+    json = null;
+  }
+  return {
+    type: RECEIVE_ME,
+    me: json,
+    receivedAt: Date.now()
+  };
+}
+
+function showGitHubEmailErrorMessage() {
+  return {
+    type: SHOW_GITHUB_EMAIL_ERROR_MESSAGE
+  };
+}
+
+function receiveProjectDetails(json) {
+  return {
+    type: RECEIVE_PROJECT_DETAILS,
+    teamProjectDetails: json
   };
 }
