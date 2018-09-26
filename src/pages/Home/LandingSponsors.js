@@ -15,6 +15,7 @@ import Intel from '../../assets/images/sponsors/intel.svg';
 import SFAB from '../../assets/images/sponsors/sfab.jpg';
 import PurdueEngineering from '../../assets/images/sponsors/purdue_engineering.png';
 import GC from '../../assets/images/sponsors/google_cloud.png';
+import StickerMule from '../../assets/images/sponsors/sticker_mule.svg';
 
 import './_pillar.home.sponsors.source.scss';
 
@@ -52,8 +53,16 @@ export default class LandingSponsors extends PureComponent {
           </div>
           <div className="p-landing_sponsors__partners">
             <Hr>Partners</Hr>
-            <img alt="SFAB" src={SFAB} />
-            <img alt="Purdue Engineering" src={PurdueEngineering} />
+            <div className="p-landing_sponsors__partners_logos">
+              <img alt="SFAB" src={SFAB} />
+              <img alt="Purdue Engineering" src={PurdueEngineering} />
+              <a
+                href="http://hackp.ac/mlh-stickermule-hackathons"
+                className="p-landing_sponsors__partners_logos--sticker_mule"
+              >
+                <img alt="StickerMule" src={StickerMule} />
+              </a>
+            </div>
           </div>
         </Card>
       </div>

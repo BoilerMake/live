@@ -42,11 +42,23 @@
   margin-top: $spacing_200;
   text-align: center;
 }
-.p-landing_sponsors__partners img {
-  width: 25%;
-  margin-top: $spacing_200;
+.p-landing_sponsors__partners_logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-landing_sponsors__partners_logos img {
+  width: 20%;
   margin-left: $spacing_100;
   margin-right: $spacing_100;
+}
+.p-landing_sponsors__partners_logos--sticker_mule {
+  margin: 0 -$spacing_100;
+  width: 20%;
+}
+.p-landing_sponsors__partners_logos--sticker_mule img {
+  margin: 0 -$spacing_100;
+  width: 100%;
 }
 .p-landing_sponsors__partners h3 {
   margin-top: 0;
