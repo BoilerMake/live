@@ -45,7 +45,7 @@ class Application extends Component {
 
   handleTeamMemberChange(e, i) {
     const state = this.state;
-    this.state[`teamName${i}`] = e.target.value;
+    state[`teamName${i}`] = e.target.value;
     this.setState(state);
   }
 
@@ -63,7 +63,7 @@ class Application extends Component {
   }
 
   render() {
-    let { me } = this.props.user;
+    // let { me } = this.props.user;
     let { applicationForm } = this.props.application;
     let doesUserHaveDecision =
       applicationForm.decision !== null &&
