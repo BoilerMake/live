@@ -93,7 +93,7 @@ class Application extends Component {
             </Card>
             <Card className="">
               <h2>Project Idea</h2>
-              <p>Breifly let us know what you plan to make!</p>
+              <p>Briefly let us know what you plan to make!</p>
               <TextInput
                 value={this.state.projectIdea}
                 onChange={e => this.handleProjectChange(e)}
