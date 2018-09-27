@@ -121,20 +121,6 @@ export function confirmEmail(code) {
   };
 }
 
-export function updateTeamProjectDetails(details) {
-  console.log(details);
-  return dispatch => {
-    return apiFetch('users/project', {
-      method: 'PUT',
-      body: JSON.stringify(details)
-    })
-      .then(response => response.json())
-      .then(json => {
-        if (json.success) toastr.success('Success!', 'Project Details Saved');
-      });
-  };
-}
-
 export function fetchTeamProjectDetails() {
   return (dispatch, getState) => {
     return apiFetch('users/project')

@@ -7,11 +7,7 @@ import { Card, Button, TextInput } from 'bm-kit';
 import ApplicationDecision from '../Application/ApplicationDecision';
 
 import { fetchApplication } from '../../actions/application';
-import {
-  fetchMe,
-  updateTeamProjectDetails,
-  fetchTeamProjectDetails
-} from '../../actions/users';
+import { fetchMe, updateMe } from '../../actions/users';
 
 import './_pillar.dashboard.source.scss';
 
@@ -46,12 +42,19 @@ class Application extends Component {
   }
 
   submitProjectTeamInfo() {
-    this.props.updateTeamProjectDetails(this.state);
+    const me = this.props.user.me;
+    me.project_idea = this.state.projectIdea;
+    me.team_names = this.state.teamMembers;
+    console.log(me);
+    this.props.updateMe(me);
   }
 
   render() {
     let { me } = this.props.user;
-    let { applicationForm, loading } = this.props.application;
+    const teamMembers =
+      me && me.team_names !== null ? me.team_names : this.state.teamMembers;
+    const projectIdea = me ? me.project_idea : this.state.projectIdea;
+    let { applicationForm } = this.props.application;
     let doesUserHaveDecision =
       applicationForm.decision !== null &&
       applicationForm.decision !== undefined &&
@@ -82,7 +85,7 @@ class Application extends Component {
               <h2>Project Idea</h2>
               <p>Breifly let us know what you plan to make!</p>
               <TextInput
-                value={this.state.projectIdea}
+                value={projectIdea || ''}
                 onChange={e => this.handleProjectChange(e)}
               />
               <Button>Save</Button>
@@ -95,10 +98,10 @@ class Application extends Component {
               email they used to sign up.
             </p>
 
-            {this.state.teamMembers.map((teamMembers, i) => {
+            {teamMembers.map((teamMember, i) => {
               return (
                 <TextInput
-                  value={this.state.teamMembers[i]}
+                  value={teamMember || ''}
                   label={`Team Member ${i + 1}`}
                   onChange={e => this.handleTeamMemberChange(e, i)}
                   key={i}
@@ -127,7 +130,7 @@ const mapDispatchToProps = dispatch => {
     {
       fetchApplication,
       fetchMe,
-      updateTeamProjectDetails
+      updateMe
     },
     dispatch
   );
