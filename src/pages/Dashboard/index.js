@@ -8,6 +8,7 @@ import ApplicationDecision from '../Application/ApplicationDecision';
 
 import { fetchApplication } from '../../actions/application';
 import { fetchMe, updateMe } from '../../actions/users';
+import apiFetch from '../../actions/';
 
 import './_pillar.dashboard.source.scss';
 
@@ -17,7 +18,9 @@ class Application extends Component {
 
     this.state = {
       projectIdea: '',
-      teamMembers: ['', '', '']
+      teamName1: '',
+      teamName2: '',
+      teamName3: ''
     };
 
     this.handleTeamMemberChange = this.handleTeamMemberChange.bind(this);
@@ -28,13 +31,22 @@ class Application extends Component {
   componentDidMount() {
     this.props.fetchMe();
     this.props.fetchApplication();
+    apiFetch('users/me')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          projectIdea: json.data.project_idea,
+          teamName1: json.data.team_name_1,
+          teamName2: json.data.team_name_2,
+          teamName3: json.data.team_name_3
+        });
+      });
   }
 
   handleTeamMemberChange(e, i) {
-    const teamMembers = this.state.teamMembers;
-    teamMembers[i] = e.target.value;
-
-    this.setState({ teamMembers });
+    const state = this.state;
+    this.state[`teamName${i}`] = e.target.value;
+    this.setState(state);
   }
 
   handleProjectChange(e) {
@@ -44,16 +56,14 @@ class Application extends Component {
   submitProjectTeamInfo() {
     const me = this.props.user.me;
     me.project_idea = this.state.projectIdea;
-    me.team_names = this.state.teamMembers;
-    console.log(me);
+    me.team_name_1 = this.state.teamName1;
+    me.team_name_2 = this.state.teamName2;
+    me.team_name_3 = this.state.teamName3;
     this.props.updateMe(me);
   }
 
   render() {
     let { me } = this.props.user;
-    const teamMembers =
-      me && me.team_names !== null ? me.team_names : this.state.teamMembers;
-    const projectIdea = me ? me.project_idea : this.state.projectIdea;
     let { applicationForm } = this.props.application;
     let doesUserHaveDecision =
       applicationForm.decision !== null &&
@@ -85,10 +95,10 @@ class Application extends Component {
               <h2>Project Idea</h2>
               <p>Breifly let us know what you plan to make!</p>
               <TextInput
-                value={projectIdea || ''}
+                value={this.state.projectIdea}
                 onChange={e => this.handleProjectChange(e)}
               />
-              <Button>Save</Button>
+              <Button onClick={this.submitProjectTeamInfo}>Save</Button>
             </Card>
           </div>
           <Card className="p-dashboard__team_members">
@@ -97,17 +107,21 @@ class Application extends Component {
               You can add up to three team members. Let us know their name, or
               email they used to sign up.
             </p>
-
-            {teamMembers.map((teamMember, i) => {
-              return (
-                <TextInput
-                  value={teamMember || ''}
-                  label={`Team Member ${i + 1}`}
-                  onChange={e => this.handleTeamMemberChange(e, i)}
-                  key={i}
-                />
-              );
-            })}
+            <TextInput
+              value={this.state.teamName1}
+              label={`Team Member 1`}
+              onChange={e => this.handleTeamMemberChange(e, 1)}
+            />
+            <TextInput
+              value={this.state.teamName2}
+              label={`Team Member 2`}
+              onChange={e => this.handleTeamMemberChange(e, 2)}
+            />
+            <TextInput
+              value={this.state.teamName3}
+              label={`Team Member 3`}
+              onChange={e => this.handleTeamMemberChange(e, 3)}
+            />
             <Button onClick={this.submitProjectTeamInfo}>Save</Button>
           </Card>
         </div>

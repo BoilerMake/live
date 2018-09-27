@@ -12,6 +12,7 @@ export const RECEIVE_PROJECT_DETAILS = 'RECEIVE_PROJECT_DETAILS';
 export const SHOW_GITHUB_EMAIL_ERROR_MESSAGE =
   'SHOW_GITHUB_EMAIL_ERROR_MESSAGE';
 export const LOGOUT_USER = 'LOGOUT_USER';
+export const UPDATE_ME = 'UPDATE_ME';
 
 // ACTIONS
 export function loginFromJWT(token) {

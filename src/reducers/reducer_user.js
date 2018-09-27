@@ -13,7 +13,14 @@ const INITIAL_STATE = {
   authenticated: false,
   isHacker: false,
   isExec: false,
-  me: null,
+  me: {
+    first_name: '',
+    last_name: '',
+    project_idea: '',
+    team_name_1: '',
+    team_name_2: '',
+    team_name_3: ''
+  },
   error: null,
   loading: false,
   token: null,

@@ -1,9 +1,9 @@
 import cookie from 'react-cookie';
 import Hashids from 'hashids';
 import ReactGA from 'react-ga';
-import { DEBUG_MODE, GITHUB_CLIENT_ID, API_BASE_URL } from '../config';
-// import { DEBUG_MODE, GITHUB_CLIENT_ID } from '../config';
-// const API_BASE_URL = 'https://api.stage.boilermake.org/v1';
+// import { DEBUG_MODE, GITHUB_CLIENT_ID, API_BASE_URL } from '../config';
+import { DEBUG_MODE, GITHUB_CLIENT_ID } from '../config';
+const API_BASE_URL = 'https://api.stage.boilermake.org/v1';
 function s4() {
   return Math.floor((1 + Math.random()) * 0x10000)
     .toString(16)
