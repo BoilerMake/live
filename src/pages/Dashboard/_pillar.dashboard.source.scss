@@ -2,6 +2,7 @@
 
 .p-dashboard {
   @include max-width;
+  margin-bottom: $spacing_200;
 }
 
 .p-dashboard__content_wrapper {
