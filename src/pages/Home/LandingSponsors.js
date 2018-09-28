@@ -16,6 +16,7 @@ import SFAB from '../../assets/images/sponsors/sfab.jpg';
 import PurdueEngineering from '../../assets/images/sponsors/purdue_engineering.png';
 import GC from '../../assets/images/sponsors/google_cloud.png';
 import StickerMule from '../../assets/images/sponsors/sticker_mule.svg';
+import MicroNote from '../../assets/images/sponsors/micronotelogo.svg';
 
 import './_pillar.home.sponsors.source.scss';
 
@@ -50,6 +51,7 @@ export default class LandingSponsors extends PureComponent {
             />
             <img alt="SEP" src={SEP} />
             <img alt="Google Cloud Platform" src={GC} />
+            <img alt="MicroNote" src={MicroNote} />
           </div>
           <div className="p-landing_sponsors__partners">
             <Hr>Partners</Hr>
