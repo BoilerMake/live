@@ -34,12 +34,6 @@ describe('handles LOGIN_FROM_JWT_SUCCESS', ()=>{
         assert.equal(newState.isExec, false);
     });
 });
-it('handles LOGOUT_USER', ()=>{
-    const newState = reducer_user(initialState, {
-        type: 'LOGOUT_USER',
-    });
-    assert.deepEqual(initialState, newState);
-})
 it('handles REQUEST_ME', ()=>{
     const newState = reducer_user(initialState, {
         type: 'REQUEST_ME',
