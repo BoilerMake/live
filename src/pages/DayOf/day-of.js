@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
-import title from '../../assets/images/DayOf/title.svg';
-import schedule from '../../assets/images/DayOf/schedule.svg';
-import resources from '../../assets/images/DayOf/resources.svg';
-import squiggle1 from '../../assets/images/DayOf/squiggle1.svg';
-import squiggle2 from '../../assets/images/DayOf/squiggle2.svg';
-import { Card } from 'bm-kit';
+import { Card, Button } from 'bm-kit';
+import Announcements from './Announcements';
+import Schedule from '../../components/Schedule';
+
+import logo from '../../assets/images/bm6_hammers.svg';
 import './_pillar.day_of.source.scss';
 
 class DayOf extends PureComponent {
@@ -40,180 +39,47 @@ class DayOf extends PureComponent {
 
   render() {
     return (
-      <div>
-        <div style={{ backgroundColor: '#14CAFE' }}>
-          <div className="max-width flex text-center">
-            <div className="col-2" />
-            <div className="col-8">
-              <img src={title} alt="logo" />
-            </div>
+      <div className="p-day_of">
+        <div className="p-day_of--info">
+          <div className="col-9 p-day_of--announcements">
+            <Announcements />
+          </div>
 
-            <div className="col-6 countdown">
-              <h1>Hacking ends in</h1>
+          <div className="col-3 p-day_of--links">
+            <Card>
+              <h2>Links</h2>
+              <a href="https://help.boilermake.org/">
+                <Button full>Get Help</Button>
+              </a>
+              <a href="http://invite.boilermake.org/">
+                <Button full>Socialize</Button>
+              </a>
+              <a href="https://boilermake-v.devpost.com/">
+                <Button full>Prize Info</Button>
+              </a>
+              <a href="https://help.boilermake.org/">
+                <Button full>Photos</Button>
+              </a>
               <div className="flex h-center">
-                <div className="padding">
-                  <h1>{this.state.days}</h1>
+                <div className="">
+                  <h3>{this.state.days}</h3>
                   <p>Days</p>
                 </div>
-                <div className="padding">
-                  <h1>{this.state.hours}</h1>
+                <div className="paddingx">
+                  <h3>{this.state.hours}</h3>
                   <p>Hours</p>
                 </div>
-                <div className="padding">
-                  <h1>{this.state.minutes}</h1>
+                <div className="">
+                  <h3>{this.state.minutes}</h3>
                   <p>Minutes</p>
                 </div>
               </div>
-            </div>
-            <div className="col-6 messages">
-              <Card>
-                <div className="messages-inner text-reset">
-                  <Card>
-                    <p>
-                      One hour left to submit your projects! Make sure you get
-                      them in!
-                    </p>
-                    <i>Posted 11 mins ago</i>
-                  </Card>
-                  <Card>
-                    <p>
-                      Lunch will be available in Gyms 4, 5, and 6 in 10 minutes!
-                      But this one's a bit longer so watch out for that
-                    </p>
-                    <i>Posted 56 mins ago</i>
-                  </Card>
-                  <Card>
-                    <p>
-                      One hour left to submit your projects! Make sure you get
-                      them in!
-                    </p>
-                    <i>Posted 11 mins ago</i>
-                  </Card>
-                  <Card>
-                    <p>
-                      Lunch will be available in Gyms 4, 5, and 6 in 10 minutes!
-                    </p>
-                    <i>Posted 56 mins ago</i>
-                  </Card>
-                  <Card>
-                    <p>
-                      One hour left to submit your projects! Make sure you get
-                      them in!
-                    </p>
-                    <i>Posted 11 mins ago</i>
-                  </Card>
-                  <Card>
-                    <p>
-                      Lunch will be available in Gyms 4, 5, and 6 in 10 minutes!
-                    </p>
-                    <i>Posted 56 mins ago</i>
-                  </Card>
-                </div>
-              </Card>
-            </div>
+            </Card>
           </div>
         </div>
-        <div style={{ backgroundColor: '#F8E001' }}>
-          <img src={squiggle1} alt="squiggle1" />
-          <div className="max-width flex text-center">
-            <div className="col-6">
-              <img src={schedule} alt="squiggle1" />
-            </div>
-          </div>
-          <div className="col-6" />
-          <div className="max-width flex">
-            <div className="col-4">
-              <h1>Friday</h1>
-              <div className="schedule-item">
-                <i className="schedule-time">8:00 pm</i>
-                <p>Opening Ceremonies</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">9:00 pm</i>
-                <p>Hacking Begins</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:00 pm</i>
-                <p>Tech talk w the lads</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:15 - 10:45 pm</i>
-                <p>Yoga pt. 1</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">11:00 pm</i>
-                <p>Something, probably</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">12:00 am</i>
-                <p>Midnight Snack</p>
-              </div>
-            </div>
-            <div className="col-4">
-              <h1>Saturday</h1>
-              <div className="schedule-item">
-                <i className="schedule-time">8:00 pm</i>
-                <p>Opening Ceremonies</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">9:00 pm</i>
-                <p>Hacking Begins</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:00 pm</i>
-                <p>Tech talk w the lads</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:15 - 10:45 pm</i>
-                <p>Yoga pt. 1</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">11:00 pm</i>
-                <p>Something, probably</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">12:00 am</i>
-                <p>Midnight Snack</p>
-              </div>
-            </div>
-            <div className="col-4">
-              <h1>Sunday</h1>
-              <div className="schedule-item">
-                <i className="schedule-time">8:00 pm</i>
-                <p>Opening Ceremonies</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">9:00 pm</i>
-                <p>Hacking Begins</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:00 pm</i>
-                <p>Tech talk w the lads</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">10:15 - 10:45 pm</i>
-                <p>Yoga pt. 1</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">11:00 pm</i>
-                <p>Something, probably</p>
-              </div>
-              <div className="schedule-item">
-                <i className="schedule-time">12:00 am</i>
-                <p>Midnight Snack</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style={{ backgroundColor: '#26C99C' }}>
-          <img src={squiggle2} alt="squiggle1" />
-          <div className="max-width flex text-center">
-            <div className="col-6">
-              <img src={resources} alt="squiggle1" />
-            </div>
-          </div>
-          <div className="max-width flex text-center" />
-        </div>
+
+        <Schedule />
+        <img src={logo} alt="BoilerMake logo" className="p-day_of--hammers" />
       </div>
     );
   }
