@@ -24,8 +24,16 @@ const friday = [
     name: '💻 Hacking Begins'
   },
   {
+    start: '10:00 PM',
+    name: '🤖 Fundamentals of AI with Intel'
+  },
+  {
     start: '11:00 PM',
     name: '⛷ Activity'
+  },
+  {
+    start: '12:00 AM',
+    name: '🥋 Ninja'
   }
 ];
 
@@ -47,6 +55,10 @@ let saturday = [
     name: '🍝 Lunch'
   },
   {
+    start: '1:00 PM',
+    name: '👪 Facebook Tech Talk'
+  },
+  {
     start: '3:00 PM',
     name: '🍿 Snack'
   },
@@ -55,8 +67,16 @@ let saturday = [
     name: '🚣🏽 Activity'
   },
   {
+    start: '4:00 PM',
+    name: '📈 Startups with T.A. MaCann'
+  },
+  {
     start: '6:00 PM',
     name: '🍕 Dinner'
+  },
+  {
+    start: '9:00 PM',
+    name: '🥤 Cup stacking with MLH'
   },
   {
     start: '10:00 PM',
