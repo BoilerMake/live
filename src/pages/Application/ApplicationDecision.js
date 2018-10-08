@@ -131,11 +131,12 @@ class ApplicationDecision extends Component {
   renderWaitlist() {
     return (
       <div className="section">
-        <h1>Thanks for applying.</h1>
+        <h2 style={{ marginTop: 0 }}>Thanks for applying.</h2>
         <p>
-          Unfortunately, we cannot accept you just yet. But don’t fret! We’ll
-          let you know if space opens up so that you can hopefully attend
-          BoilerMake this year.
+          We cannot accept you just yet. But don’t fret! We’ll be looking at
+          apps over the next week and will let you know if space opens up. We
+          acknowledge you accomplishments hope you can attend BoilerMake this
+          year!
         </p>
       </div>
     );
@@ -144,7 +145,7 @@ class ApplicationDecision extends Component {
   renderExpired() {
     return (
       <div className="section">
-        <h1>Sorry about that.</h1>
+        <h2>Sorry about that.</h2>
         <p>
           Unfortunately, your acceptance offer has expired. We hope to see you
           at next year’s BoilerMake!
@@ -174,6 +175,7 @@ class ApplicationDecision extends Component {
     //     0: 'UNDECIDED'
     // };
     const { applicationForm } = this.props.application;
+    applicationForm.decision = 4;
 
     return (
       <Card className="p-decision">
