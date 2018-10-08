@@ -1,93 +1,29 @@
 import React, { Component } from 'react';
 import { Button, Card } from 'bm-kit';
-import ApplicationTextField from './ApplicationTextField';
 import ApplicationSelectField from './ApplicationSelectField';
 import ApplicationRSVPToggle from './ApplicationRSVPToggle';
 import { dietOptions, shirtOptions, skillOptions } from './ApplicationConsts';
+import Hr from '../../components/Hr';
+
+import DecisionTransitMethod from './DecisionTransitMethod';
 
 class ApplicationDecision extends Component {
-  renderHasBus() {
-    const { applicationForm } = this.props.application;
-
-    return (
-      <div className="section">
-        <p>We'll be sending a bus to {applicationForm.school.name}!</p>
-        <p>
-          Join the Facebook event{' '}
-          <a
-            href={`https://www.facebook.com/events/${
-              applicationForm.school.facebook_event_id
-            }`}
-          >
-            here
-          </a>{' '}
-          to stay up to date!
-        </p>
-      </div>
-    );
-  }
-
-  renderHasCar() {
-    const { applicationForm } = this.props.application;
-
-    return (
-      <div className="section">
-        <p>
-          Sadly we won't be able to send a bus to{' '}
-          <b>{applicationForm.school.name}.</b>
-        </p>
-        <p>
-          However, if you're willing to get here by your own means, we'd love to
-          have you!.
-        </p>
-        <p>
-          <i>
-            Please note that we will not be providing any form of travel
-            reimbursements.
-          </i>
-        </p>
-      </div>
-    );
-  }
-
-  renderHasFeet() {
-    return (
-      <p>
-        Well, you have it easy! BoilerMake will be happening in the Black & Gold
-        Gyms of the CoRec on campus.
-      </p>
-    );
-  }
-
-  renderTransitMethod() {
-    const { applicationForm } = this.props.application;
-    const method = applicationForm.school.transit_method;
-
-    if (method === 'bus') return this.renderHasBus();
-    if (method === 'car') return this.renderHasCar();
-    if (method === 'walk') return this.renderHasFeet();
-  }
-
   renderRSVPYes() {
-    // const { applicationForm } = this.props.application;
     const isLoading = this.props.application.loading;
 
     return (
-      <div className="section">
-        <h2>Neat! Just a few more steps.</h2>
-        <p>
-          Providing us with a phone number (optional) will allow us to send you
-          important event updates! We will be providing everyone with lanyard
-          nametags, you can pick up to 3 skills to be displayed on them. Lastly,
-          if you have any special dietary requests, please{' '}
-          <a href="mailto:team@boilermake.org">email us!</a>
-        </p>
-        <div className="row">
-          <div className="col-6">
-            <label>Phone #</label>
-            <ApplicationTextField field="phone" />
-          </div>
-          <div className="col-6">
+      <div>
+        <Hr>RSVP Details</Hr>
+        <div className="p-decision__rsvp_yes">
+          <h2>Awesome! We're excited to see you! Just a few more steps.</h2>
+          <p>
+            Providing us with a phone number (optional) will allow us to send
+            you important event updates! We will be providing everyone with
+            lanyard nametags, you can pick up to 3 skills to be displayed on
+            them. Lastly, if you have any special dietary requests, please{' '}
+            <a href="mailto:team@boilermake.org">email us!</a>
+          </p>
+          <div className="p-decision__rsvp_yes_form">
             <label>Pick up to 3 Skills</label>
             <ApplicationSelectField
               field="skills"
@@ -95,14 +31,8 @@ class ApplicationDecision extends Component {
               searchable
               options={skillOptions}
             />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-6">
             <label>T-shirt size</label>
             <ApplicationSelectField field="tshirt" options={shirtOptions} />
-          </div>
-          <div className="col-6">
             <label>Dietary Restrictions</label>
             <ApplicationSelectField
               field="diet"
@@ -111,6 +41,16 @@ class ApplicationDecision extends Component {
               options={dietOptions}
             />
           </div>
+          <br />
+          <Button
+            disabled={isLoading}
+            onClick={() => {
+              this.props.saveApplication(false, true);
+            }}
+            full
+          >
+            Submit RSVP
+          </Button>
         </div>
         <br />
         <Button
@@ -127,10 +67,8 @@ class ApplicationDecision extends Component {
   }
 
   renderRSVPNo() {
-    // const { applicationForm } = this.props.application;
-
     return (
-      <p className="section">
+      <p className="p-decision__rsvp_no">
         Aw{' '}
         <span role="img" aria-label="Sad">
           😢
@@ -144,48 +82,50 @@ class ApplicationDecision extends Component {
     const { applicationForm } = this.props.application;
 
     return (
-      <div className="section">
-        {applicationForm.is_rsvp_confirmed === 1 ? (
-          <div>
-            <div className="appInfoBanner">
-              Your RSVP has been recorded - we will see you at BoilerMake!
-              <h2>
-                Your check in code is:{' '}
-                <b>
-                  <code>{applicationForm.user.hashid}</code>
-                </b>
-                <br /> Please have this + your photo ID ready to expedite check
-                in.
-              </h2>
+      <div>
+        <div className="p-decision__status">
+          {applicationForm.is_rsvp_confirmed === 1 ? (
+            <div>
+              <div className="appInfoBanner">
+                Your RSVP has been recorded - we will see you at BoilerMake!
+                <h2>
+                  Your check in code is:{' '}
+                  <b>
+                    <code>{applicationForm.user.hashid}</code>
+                  </b>
+                  <br /> Please have this + your photo ID ready to expedite
+                  check in.
+                </h2>
+              </div>
             </div>
-          </div>
-        ) : (
-          <p>
-            Can you come? You must RSVP{' '}
-            {applicationForm.rsvp_deadline ? (
-              <span>by {applicationForm.rsvp_deadline}</span>
-            ) : (
-              <span>soon</span>
-            )}{' '}
-            or else we will offer your spot to someone else.
+          ) : (
+            <p>
+              Can you come? You must RSVP{' '}
+              {applicationForm.rsvp_deadline ? (
+                <span>by {applicationForm.rsvp_deadline}</span>
+              ) : (
+                <span>soon</span>
+              )}{' '}
+              or else we will offer your spot to someone else.
+            </p>
+          )}
+          <h1>You're in!</h1>
+          <p className="p-decision__notes">
+            Congratulations, we’re excited to invite you to help forget the
+            future at BoilerMake 6.
+            <br />
+            BoilerMake will last from around 6PM on Friday October 19th until
+            approximately 2PM on Sunday October 21, and it will be held on
+            Purdue's campus in West Lafayette.
+            <br />
+            All we need from you now is to RSVP so we know whether to expect you
+            there or not!
           </p>
-        )}
-        <h1>You're in!</h1>
-        <p>
-          Congratulations, we’re excited to invite you to BoilerMake VI.{' '}
-          <span role="img" aria-label="Heart">
-            💜
-          </span>
-          <br />
-          BoilerMake will last from around 6PM on Friday Oct 19 until
-          approximately 2PM on Sunday Oct 21, and it will be held on Purdue's
-          campus in West Lafayette.
-          <br />
-          All we need from you now is to RSVP so we know whether to expect you
-          there or not!
-        </p>
-        <h2>Getting to BoilerMake</h2>
-        {this.renderTransitMethod()}
+        </div>
+        <DecisionTransitMethod
+          method={applicationForm.school.transit_method}
+          applicationForm={applicationForm}
+        />
         <ApplicationRSVPToggle />
         {applicationForm.rsvp !== null
           ? applicationForm.rsvp === 1
