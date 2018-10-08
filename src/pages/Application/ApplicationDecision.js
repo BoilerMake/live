@@ -53,15 +53,6 @@ class ApplicationDecision extends Component {
           </Button>
         </div>
         <br />
-        <Button
-          type="button"
-          disabled={isLoading}
-          onClick={() => {
-            this.props.saveApplication(false, true);
-          }}
-        >
-          Submit RSVP
-        </Button>
       </div>
     );
   }
@@ -111,8 +102,8 @@ class ApplicationDecision extends Component {
           )}
           <h1>You're in!</h1>
           <p className="p-decision__notes">
-            Congratulations, we’re excited to invite you to help forget the
-            future at BoilerMake 6.
+            Congratulations, we’re excited to invite you to forge the future at
+            BoilerMake 6.
             <br />
             BoilerMake will last from around 6PM on Friday October 19th until
             approximately 2PM on Sunday October 21, and it will be held on
