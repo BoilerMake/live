@@ -114,11 +114,11 @@ class ApplicationDecision extends Component {
         </div>
         <br />
         <Button
+          type="button"
           disabled={isLoading}
           onClick={() => {
             this.props.saveApplication(false, true);
           }}
-          className="submit"
         >
           Submit RSVP
         </Button>
@@ -172,14 +172,13 @@ class ApplicationDecision extends Component {
         )}
         <h1>You're in!</h1>
         <p>
-          Congratulations, we’re excited to invite you to this year’s retro
-          twist on BoilerMake.{' '}
+          Congratulations, we’re excited to invite you to BoilerMake VI.{' '}
           <span role="img" aria-label="Heart">
             💜
           </span>
           <br />
-          BoilerMake will last from around 6PM on Friday Sept 29 until
-          approximately 2PM on Sunday October 1, and it will be held on Purdue's
+          BoilerMake will last from around 6PM on Friday Oct 19 until
+          approximately 2PM on Sunday Oct 21, and it will be held on Purdue's
           campus in West Lafayette.
           <br />
           All we need from you now is to RSVP so we know whether to expect you
