@@ -114,6 +114,10 @@
   margin: auto;
   text-align: center;
 }
-.p-decision__rsvp_yes_form label {
-  margin-top: $spacing_100
+.p-decision__rsvp_yes_form .p-application_select {
+  margin-top: $spacing_50;
+  margin-bottom: $spacing_100;
+}
+.p-decision__rsvp_yes_form .c_button {
+  margin-top: 0;
 }

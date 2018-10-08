@@ -47,7 +47,7 @@ class ApplicationDecision extends Component {
             onClick={() => {
               this.props.saveApplication(false, true);
             }}
-            className="submit"
+            full
           >
             Submit RSVP
           </Button>
