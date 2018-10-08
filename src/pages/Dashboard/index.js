@@ -76,7 +76,7 @@ class Application extends Component {
         {doesUserHaveDecision ? <ApplicationDecision /> : null}
 
         <div className="p-dashboard__content_wrapper">
-          <div className="p-dashboard__application">
+          {doesUserHaveDecision ? null : (
             <Card className="p-dashboard__application_link">
               <h2>Application</h2>
               {applicationForm.completed ? (
@@ -93,16 +93,16 @@ class Application extends Component {
                 <Button>View Application</Button>
               </Link>
             </Card>
-            <Card className="">
-              <h2>Project Idea</h2>
-              <p>Briefly let us know what you plan to make!</p>
-              <TextInput
-                value={this.state.projectIdea}
-                onChange={e => this.handleProjectChange(e)}
-              />
-              <Button onClick={this.submitProjectTeamInfo}>Save</Button>
-            </Card>
-          </div>
+          )}
+          <Card className="">
+            <h2>Project Idea</h2>
+            <p>Briefly let us know what you plan to make!</p>
+            <TextInput
+              value={this.state.projectIdea}
+              onChange={e => this.handleProjectChange(e)}
+            />
+            <Button onClick={this.submitProjectTeamInfo}>Save</Button>
+          </Card>
           <Card className="p-dashboard__team_members">
             <h2>Add Team Members</h2>
             <p>
