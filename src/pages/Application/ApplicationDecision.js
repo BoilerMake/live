@@ -175,7 +175,6 @@ class ApplicationDecision extends Component {
     //     0: 'UNDECIDED'
     // };
     const { applicationForm } = this.props.application;
-    applicationForm.decision = 4;
 
     return (
       <Card className="p-decision">
