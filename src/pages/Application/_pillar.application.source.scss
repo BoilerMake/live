@@ -81,7 +81,39 @@
   margin-bottom: $spacing_100;
 }
 
+.p-decision__status {
+  text-align: center;
+  margin-bottom: $spacing_200;
+}
+.p-decision__notes {
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+  line-height: 1.6em;
+}
 .p-application-toggle__button {
 	display: inline-flex;
 	margin-right: $spacing_100
+}
+.p-transit_method {
+  margin-bottom: $spacing_200;
+}
+.p-transit_method__description {
+  max-width: 700px;
+  margin: auto;
+}
+.p-rsvp_toggle {
+  margin-bottom: $spacing_200;
+}
+.p-decision__rsvp_yes {
+  max-width: 700px;
+  margin: auto;
+}
+.p-decision__rsvp_no {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+.p-decision__rsvp_yes_form label {
+  margin-top: $spacing_100
 }
