@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Card } from 'bm-kit';
-import ApplicationTextField from './ApplicationTextField';
 import ApplicationSelectField from './ApplicationSelectField';
 import ApplicationRSVPToggle from './ApplicationRSVPToggle';
 import { dietOptions, shirtOptions, skillOptions } from './ApplicationConsts';
