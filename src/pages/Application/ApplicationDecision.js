@@ -145,7 +145,7 @@ class ApplicationDecision extends Component {
   renderExpired() {
     return (
       <div className="section">
-        <h1>Sorry about that.</h1>
+        <h2>Sorry about that.</h2>
         <p>
           Unfortunately, your acceptance offer has expired. We hope to see you
           at next year’s BoilerMake!
@@ -175,7 +175,7 @@ class ApplicationDecision extends Component {
     //     0: 'UNDECIDED'
     // };
     const { applicationForm } = this.props.application;
-    applicationForm.decision = 2;
+    applicationForm.decision = 4;
 
     return (
       <Card className="p-decision">
