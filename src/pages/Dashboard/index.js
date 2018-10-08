@@ -73,6 +73,8 @@ class Application extends Component {
     return (
       <div className="p-dashboard">
         <h1>Dashboard</h1>
+        {doesUserHaveDecision ? <ApplicationDecision /> : null}
+
         <div className="p-dashboard__content_wrapper">
           <div className="p-dashboard__application">
             <Card className="p-dashboard__application_link">
@@ -125,8 +127,6 @@ class Application extends Component {
             <Button onClick={this.submitProjectTeamInfo}>Save</Button>
           </Card>
         </div>
-
-        {doesUserHaveDecision ? <ApplicationDecision /> : null}
       </div>
     );
   }
