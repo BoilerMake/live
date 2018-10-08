@@ -52,6 +52,16 @@ class ApplicationDecision extends Component {
             Submit RSVP
           </Button>
         </div>
+        <br />
+        <Button
+          type="button"
+          disabled={isLoading}
+          onClick={() => {
+            this.props.saveApplication(false, true);
+          }}
+        >
+          Submit RSVP
+        </Button>
       </div>
     );
   }
