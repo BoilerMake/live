@@ -247,9 +247,9 @@ class ApplicationDecision extends Component {
 
     return (
       <Card className="p-decision">
-        {applicationForm === 3 ? this.renderAccepted() : null}
-        {applicationForm === 2 ? this.renderWaitlist() : null}
-        {applicationForm === 4 ? this.renderExpired() : null}
+        {applicationForm.decision === 3 ? this.renderAccepted() : null}
+        {applicationForm.decision === 2 ? this.renderWaitlist() : null}
+        {applicationForm.decision === 4 ? this.renderExpired() : null}
       </Card>
     );
   }

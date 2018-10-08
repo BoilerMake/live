@@ -7,6 +7,8 @@ import {
   saveApplication
 } from '../../actions/application';
 
+import './_pillar.application.source.scss';
+
 const ApplicationRSVPToggle = ({
   changeApplicationFieldValue,
   saveApplication,
@@ -16,14 +18,11 @@ const ApplicationRSVPToggle = ({
   isLoading,
   styles
 }) => (
-  <div className="section">
+  <div>
     <Button
+      className="c_button p-application-toggle__button"
+      type="button"
       disabled={applicationForm.rsvp === 1 || isLoading}
-      className={
-        applicationForm.rsvp !== null && applicationForm.rsvp === 1
-          ? 'rsvp-button-selected'
-          : 'rsvp-button'
-      }
       onClick={() => {
         changeApplicationFieldValue('rsvp', 1);
         saveApplication(true);
@@ -32,12 +31,9 @@ const ApplicationRSVPToggle = ({
       I'll be there!
     </Button>
     <Button
+      className="c_button p-application-toggle__button"
+      type="button"
       disabled={applicationForm.rsvp === 0 || isLoading}
-      className={
-        applicationForm.rsvp !== null && applicationForm.rsvp === 0
-          ? 'rsvp-button-selected'
-          : 'rsvp-button'
-      }
       onClick={() => {
         changeApplicationFieldValue('rsvp', 0);
         saveApplication(true);
