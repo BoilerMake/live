@@ -75,58 +75,62 @@ class Application extends Component {
         <h1>Dashboard</h1>
         {doesUserHaveDecision ? <ApplicationDecision /> : null}
 
-        <div className="p-dashboard__content_wrapper">
-          {doesUserHaveDecision ? null : (
-            <Card className="p-dashboard__application_link">
-              <h2>Application</h2>
-              {applicationForm.completed ? (
-                <p>
-                  Your application is complete! You can make changes until
-                  October 10th.
-                </p>
-              ) : (
-                <p>
-                  You can make changes to your application until October 10th.
-                </p>
-              )}
-              <Link to="/application">
-                <Button>View Application</Button>
-              </Link>
+        {applicationForm.decision === 4 ||
+        applicationForm.decision === 1 ? null : ( // if null or declined
+          <div className="p-dashboard__content_wrapper">
+            {doesUserHaveDecision ? null : (
+              <Card className="p-dashboard__application_link">
+                <h2>Application</h2>
+                {applicationForm.completed ? (
+                  <p>
+                    Your application is complete! You can make changes until
+                    October 10th.
+                  </p>
+                ) : (
+                  <p>
+                    You can make changes to your application until October 10th.
+                  </p>
+                )}
+                <Link to="/application">
+                  <Button>View Application</Button>
+                </Link>
+              </Card>
+            )}
+            <Card className="">
+              <h2>Project Idea</h2>
+              <p>Briefly let us know what you plan to make!</p>
+              <TextInput
+                value={this.state.projectIdea}
+                onChange={e => this.handleProjectChange(e)}
+              />
+              <Button onClick={this.submitProjectTeamInfo}>Save</Button>
             </Card>
-          )}
-          <Card className="">
-            <h2>Project Idea</h2>
-            <p>Briefly let us know what you plan to make!</p>
-            <TextInput
-              value={this.state.projectIdea}
-              onChange={e => this.handleProjectChange(e)}
-            />
-            <Button onClick={this.submitProjectTeamInfo}>Save</Button>
-          </Card>
-          <Card className="p-dashboard__team_members">
-            <h2>Add Team Members</h2>
-            <p>
-              You can add up to three team members. Let us know their name, or
-              email they used to sign up.
-            </p>
-            <TextInput
-              value={this.state.teamName1}
-              label={`Team Member 1`}
-              onChange={e => this.handleTeamMemberChange(e, 1)}
-            />
-            <TextInput
-              value={this.state.teamName2}
-              label={`Team Member 2`}
-              onChange={e => this.handleTeamMemberChange(e, 2)}
-            />
-            <TextInput
-              value={this.state.teamName3}
-              label={`Team Member 3`}
-              onChange={e => this.handleTeamMemberChange(e, 3)}
-            />
-            <Button onClick={this.submitProjectTeamInfo}>Save</Button>
-          </Card>
-        </div>
+            <Card className="p-dashboard__team_members">
+              <h2>Add Team Members</h2>
+              <p>
+                You can add up to three team members. Let us know their name, or
+                email they used to sign up.
+              </p>
+              <TextInput
+                value={this.state.teamName1}
+                label={`Team Member 1`}
+                onChange={e => this.handleTeamMemberChange(e, 1)}
+              />
+              <TextInput
+                value={this.state.teamName2}
+                label={`Team Member 2`}
+                onChange={e => this.handleTeamMemberChange(e, 2)}
+              />
+              <TextInput
+                value={this.state.teamName3}
+                label={`Team Member 3`}
+                onChange={e => this.handleTeamMemberChange(e, 3)}
+              />
+              <Button onClick={this.submitProjectTeamInfo}>Save</Button>
+            </Card>{' '}
+            )}
+          </div>
+        )}
       </div>
     );
   }

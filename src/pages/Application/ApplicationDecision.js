@@ -145,10 +145,22 @@ class ApplicationDecision extends Component {
   renderExpired() {
     return (
       <div className="section">
-        <h2>Sorry about that.</h2>
+        <h2>Your offer has expired.</h2>
         <p>
           Unfortunately, your acceptance offer has expired. We hope to see you
           at next year’s BoilerMake!
+        </p>
+      </div>
+    );
+  }
+
+  renderDeclined() {
+    return (
+      <div className="section">
+        <h2>We're sorry.</h2>
+        <p>
+          Unfortunately, we are not able to offer you a spot at BoilerMake this
+          year. We really hope to see you next year!
         </p>
       </div>
     );
@@ -181,6 +193,7 @@ class ApplicationDecision extends Component {
         {applicationForm.decision === 3 ? this.renderAccepted() : null}
         {applicationForm.decision === 2 ? this.renderWaitlist() : null}
         {applicationForm.decision === 4 ? this.renderExpired() : null}
+        {applicationForm.decision === 1 ? this.renderDeclined() : null}
       </Card>
     );
   }
