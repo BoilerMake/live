@@ -128,7 +128,6 @@ class Application extends Component {
               />
               <Button onClick={this.submitProjectTeamInfo}>Save</Button>
             </Card>{' '}
-            )}
           </div>
         )}
       </div>
