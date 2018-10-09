@@ -47,8 +47,8 @@ class DecisionTransitMethod extends PureComponent {
   renderHasFeet() {
     return (
       <p className="p-transit_method__description">
-        Well, you have it easy! BoilerMake will be happening in the Black & Gold
-        Gyms of the CoRec on campus.
+        Well, you have it easy! BoilerMake will be happening in Hicks
+        Undergraduate Library on campus.
       </p>
     );
   }
@@ -57,9 +57,10 @@ class DecisionTransitMethod extends PureComponent {
     return (
       <div className="p-transit_method">
         <Hr>Getting to BoilerMake</Hr>
+        <br />
         {this.props.method === 'bus' ? this.renderHasBus() : null}
         {this.props.method === 'car' ? this.renderHasCar() : null}
-        {this.props.method === 'walk' ? this.renderHasCarFeet() : null}
+        {this.props.method === 'walk' ? this.renderHasFeet() : null}
       </div>
     );
   }

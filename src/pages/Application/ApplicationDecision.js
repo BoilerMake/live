@@ -17,10 +17,9 @@ class ApplicationDecision extends Component {
         <div className="p-decision__rsvp_yes">
           <h2>Awesome! We're excited to see you! Just a few more steps.</h2>
           <p>
-            Providing us with a phone number (optional) will allow us to send
-            you important event updates! We will be providing everyone with
-            lanyard nametags, you can pick up to 3 skills to be displayed on
-            them. Lastly, if you have any special dietary requests, please{' '}
+            We will be providing everyone with lanyard nametags - you can pick
+            up to 3 skills to be displayed on them. Lastly, if you have any
+            special dietary requests not included here, please{' '}
             <a href="mailto:team@boilermake.org">email us!</a>
           </p>
           <div className="p-decision__rsvp_yes_form">
@@ -60,10 +59,11 @@ class ApplicationDecision extends Component {
   renderRSVPNo() {
     return (
       <p className="p-decision__rsvp_no">
-        Aw{' '}
+        We're sorry you can't make it{' '}
         <span role="img" aria-label="Sad">
           😢
         </span>{' '}
+        <br />
         Please come back and apply next year though!{' '}
       </p>
     );
@@ -102,15 +102,15 @@ class ApplicationDecision extends Component {
           )}
           <h1>You're in!</h1>
           <p className="p-decision__notes">
-            Congratulations, we’re excited to invite you to forge the future at
-            BoilerMake 6.
+            Congratulations! We’re excited to invite you to forge the future at
+            BoilerMake VI.
             <br />
-            BoilerMake will last from around 6PM on Friday October 19th until
-            approximately 2PM on Sunday October 21, and it will be held on
-            Purdue's campus in West Lafayette.
+            BoilerMake will start around 6PM on Friday, October 19th and last
+            until approximately 2PM on Sunday, October 21 on Purdue's campus in
+            West Lafayette.
             <br />
-            All we need from you now is to RSVP so we know whether to expect you
-            there or not!
+            Please submit your RSVP so we know whether or not to expect you
+            there!
           </p>
         </div>
         <DecisionTransitMethod
