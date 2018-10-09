@@ -20,7 +20,7 @@ const ApplicationRSVPToggle = ({
   styles
 }) => (
   <div className="p-rsvp_toggle">
-    <Hr>Can you make it BoilerMake?</Hr>
+    <Hr>Can you make it to BoilerMake?</Hr>
     <div className="text-center">
       <Button
         className="c_button p-application-toggle__button"

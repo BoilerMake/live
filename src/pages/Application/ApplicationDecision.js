@@ -133,10 +133,10 @@ class ApplicationDecision extends Component {
       <div className="section">
         <h2 style={{ marginTop: 0 }}>Thanks for applying.</h2>
         <p>
-          We cannot accept you just yet. But don’t fret! We’ll be looking at
+          You're currently on our waitlist. But don’t fret! We’ll be looking at
           apps over the next week and will let you know if space opens up. We
-          acknowledge you accomplishments hope you can attend BoilerMake this
-          year!
+          acknowledge how awesome you are and hope you can attend BoilerMake
+          this year!
         </p>
       </div>
     );
