@@ -9,17 +9,10 @@ import configureStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 import { loginFromJWT } from './actions/users';
 import GoogleAnalytics from 'react-ga';
-import { GOOGLE_ANALYTICS_ID, DEBUG_MODE, SENTRY_URL } from './config';
+import { GOOGLE_ANALYTICS_ID, DEBUG_MODE } from './config';
 
 GoogleAnalytics.initialize(GOOGLE_ANALYTICS_ID, { debug: DEBUG_MODE });
-import Raven from 'raven-js';
-Raven.config(SENTRY_URL).install();
 
-let originalConsoleError = console.error;
-console.error = function(message, error) {
-  Raven.captureException(error);
-  originalConsoleError.apply(this, arguments);
-};
 const store = configureStore();
 
 const token = cookie.load('token');

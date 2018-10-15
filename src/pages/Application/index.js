@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import ApplicationDecision from './ApplicationDecision';
 import ApplicationForm from './ApplicationForm';
 
 import './_pillar.application.source.scss';
@@ -27,7 +26,7 @@ class Application extends Component {
     if (!me || !applicationForm || loading) {
       content = <div>{/* <h1>Loading...</h1> */}</div>;
     } else if (doesUserHaveDecision) {
-      content = <ApplicationDecision />;
+      content = <Redirect to="/dashboard" />;
     } else {
       content = <ApplicationForm />;
     }

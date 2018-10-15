@@ -6,7 +6,7 @@
 }
 
 .p-dashboard__content_wrapper {
-  display: flex;
+  // display: flex;
   margin-bottom: $spacing_100;
 }
 
@@ -24,9 +24,8 @@
 }
 
 .p-dashboard__team_members {
-  width: 50%;
-  margin-left: $spacing_50;
   box-sizing: border-box;
+  margin-top: $spacing_100;
 }
 
 @media (max-width: 575px) {
