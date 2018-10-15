@@ -18,6 +18,7 @@ class ApplicationForm extends Component {
     const isLoading = this.props.application.loading;
 
     let transitMessage;
+    console.log(applicationForm);
     switch (applicationForm.school.transit_method) {
       case 'bus':
         transitMessage = (
