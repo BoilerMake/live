@@ -21,7 +21,6 @@ class Announcements extends Component {
             return (
               <Card key={a.id} className="p-day_of--announcement">
                 <p>{a.body}</p>
-                <br />
                 <i>{when.fromNow()}</i>
               </Card>
             );
