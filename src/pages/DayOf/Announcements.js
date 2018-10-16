@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card } from 'bm-kit';
 import moment from 'moment';
 
 class Announcements extends Component {
@@ -13,20 +12,27 @@ class Announcements extends Component {
 
   render() {
     return (
-      <Card className="p-day_of--announcements">
-        <h3>Announcements</h3>
-        <div className="p-day_of--announcements_holder">
-          {this.props.dayof.announcements.map(a => {
-            let when = moment.utc(a.created_at);
-            return (
-              <Card key={a.id} className="p-day_of--announcement">
-                <p>{a.body}</p>
-                <i>{when.fromNow()}</i>
-              </Card>
-            );
-          })}
+      <div className="col-9">
+        <div className="p-day_of--section_header">
+          <h3 style={{ margin: 0 }}>Announcements</h3>
         </div>
-      </Card>
+        <div className="c-day_of_card p-day_of--announcements">
+          <div className="p-day_of--announcements_holder">
+            {this.props.dayof.announcements.map(a => {
+              let when = moment.utc(a.created_at);
+              return (
+                <div
+                  key={a.id}
+                  className="c-day_of_card p-day_of--announcement"
+                >
+                  <p>{a.body}</p>
+                  <i>{when.fromNow()}</i>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     );
   }
 }

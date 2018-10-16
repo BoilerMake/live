@@ -65,7 +65,7 @@ const PrivateRoute = ({
 const ContainerSwitcherRoute = ({ children, location, ...rest }) => {
   if (location.pathname.includes('/exec')) {
     return <ExecContainer>{children}</ExecContainer>;
-  } else if (location.pathname === '/404') {
+  } else if (location.pathname === '/live') {
     return <div>{children}</div>;
   } else {
     return (

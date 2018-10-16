@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Card, Button } from 'bm-kit';
+import { Button } from 'bm-kit';
 import Announcements from './Announcements';
 import Schedule from '../../components/Schedule';
 
@@ -10,76 +10,130 @@ class DayOf extends PureComponent {
   constructor(props) {
     super(props);
 
-    const end = new Date().getTime() + 1000 * 60 * 60 * 24 * 2 - 2000;
-    const distance = end - new Date().getTime();
+    const distance = this.getRef() - new Date().getTime();
 
     this.state = {
-      end: end,
-      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      ref: this.getRef(),
+      days: this.getDays(distance),
+      hours: this.getHours(distance),
+      minutes: this.getMinutes(distance),
+      seconds: this.getSeconds(distance)
     };
+
+    this.getRef = this.getRef.bind(this);
+  }
+
+  getDays(distance) {
+    return Math.floor(distance / (1000 * 60 * 60 * 24))
+      .toString()
+      .padStart(2, '0');
+  }
+
+  getHours(distance) {
+    return Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      .toString()
+      .padStart(2, '0');
+  }
+
+  getMinutes(distance) {
+    return Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      .toString()
+      .padStart(2, '0');
+  }
+
+  getSeconds(distance) {
+    return Math.floor((distance % (1000 * 60)) / 1000)
+      .toString()
+      .padStart(2, '0');
+  }
+
+  /*
+  Should we reference the start or end for the countdown?
+  Useful for if we're counting down to the start of hackathon
+  or the end
+  */
+  getRef() {
+    const end = new Date('Oct 21, 2018 09:30:00').getTime();
+    const start = new Date('Oct 19, 2018 22:00:00').getTime();
+
+    const now = new Date();
+    let ref;
+    start > now ? (ref = start) : (ref = end);
+    return ref;
   }
 
   componentDidMount() {
     setInterval(() => {
-      var dist = this.state.end - new Date().getTime();
-
-      var days = Math.floor(dist / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      const distance = this.getRef() - new Date().getTime();
 
       this.setState({
-        days: days,
-        hours: hours,
-        minutes: minutes
+        days: this.getDays(distance),
+        hours: this.getHours(distance),
+        minutes: this.getMinutes(distance),
+        seconds: this.getSeconds(distance)
       });
-    }, 1000 * 60);
+    }, 1000);
   }
 
   render() {
-    return (
-      <div className="p-day_of">
-        <div className="p-day_of--info">
-          <div className="col-9 p-day_of--announcements">
-            <Announcements />
-          </div>
+    const end = new Date('Oct 21, 2018 09:30:00').getTime();
+    const countdownTag =
+      this.getRef() === end ? 'Until Hacking Ends' : 'Until Hacking Begins';
 
-          <div className="col-3 p-day_of--links">
-            <Card>
-              <h2>Links</h2>
-              <a href="https://help.boilermake.org/">
-                <Button full>Get Help</Button>
-              </a>
-              <a href="http://invite.boilermake.org/">
-                <Button full>Socialize</Button>
-              </a>
-              <a href="https://boilermake-v.devpost.com/">
-                <Button full>Prize Info</Button>
-              </a>
-              <a href="https://help.boilermake.org/">
-                <Button full>Photos</Button>
-              </a>
-              <div className="flex h-center">
-                <div className="">
-                  <h3>{this.state.days}</h3>
-                  <p>Days</p>
-                </div>
-                <div className="paddingx">
-                  <h3>{this.state.hours}</h3>
-                  <p>Hours</p>
-                </div>
-                <div className="">
-                  <h3>{this.state.minutes}</h3>
-                  <p>Minutes</p>
-                </div>
-              </div>
-            </Card>
+    return (
+      <div className="p-day_of--wrapper">
+        <div className="p-day_of--header">
+          <div className="p-day_of--logo">
+            <img
+              src={logo}
+              alt="BoilerMake logo"
+              className="p-day_of--hammers"
+            />
           </div>
+          <div className="p-day_of--countdown">
+            <div>
+              <div className="flex">
+                <h3>{this.state.days}</h3>
+                <div className="p-day_of--countdown_colon">:</div>
+                <h3>{this.state.hours}</h3>
+                <div className="p-day_of--countdown_colon">:</div>
+                <h3>{this.state.minutes}</h3>
+                <div className="p-day_of--countdown_colon">:</div>
+                <h3>{this.state.seconds}</h3>
+              </div>
+              <div className="p-day_of--countdown_tag">{countdownTag}</div>
+            </div>
+          </div>
+          <div className="p-day_of--empty" />
         </div>
 
-        <Schedule />
-        <img src={logo} alt="BoilerMake logo" className="p-day_of--hammers" />
+        <div className="p-day_of">
+          <div className="p-day_of--info">
+            <Announcements />
+            <div className="col-3 p-day_of--links">
+              <h2 className="p-day_of--section_header">Links</h2>
+              <div className="c-day_of_card">
+                <a href="https://help.boilermake.org/">
+                  <Button full>Get Help</Button>
+                </a>
+                <a href="https://join.slack.com/t/boilermake6/shared_invite/enQtNDU0NDg5MDI0NDAzLWY1OWE3N2FkODhjMmEwNjJkZWMxMmE4NDAzZmVlOTNmYjAzYzQ4ZTY1YjhjY2Q1YjVmYTMzZTgxOTFhMGYwNmU">
+                  <Button full>Socialize</Button>
+                </a>
+                <a href="https://boilermake-v.devpost.com/">
+                  <Button full>Prize Info</Button>
+                </a>
+                <a href="https://help.boilermake.org/">
+                  <Button full>Photos</Button>
+                </a>
+                <div className="flex h-center" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="p-day_of--schedule">
+          <Schedule small />
+        </div>
+        <div className="p-day_of--footer">Love, BoilerMake</div>
       </div>
     );
   }

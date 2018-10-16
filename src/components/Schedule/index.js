@@ -130,9 +130,9 @@ const ScheduleDay = ({ dayData, title }) => (
   </Card>
 );
 
-const Schedule = () => (
+const Schedule = ({ small }) => (
   <div className="p-schedule">
-    <h1>Schedule</h1>
+    {small ? <h3 style={{ marginTop: 0 }}>Schedule</h3> : <h1>Schedule</h1>}
     <div className="p-schedule__days">
       <ScheduleDay dayData={friday} title="Friday (10/19)" />
       <ScheduleDay dayData={saturday} title="Saturday (10/20)" />

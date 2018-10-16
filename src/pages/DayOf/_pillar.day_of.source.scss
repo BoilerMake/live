@@ -1,5 +1,57 @@
 @import '../../assets/tools.scss';
 
+.p-day_of--wrapper {
+	text-align: center;
+	background: #FFFFFF;
+}
+.c-day_of_card {
+	border: 1px solid $medium_mono;
+	padding: $spacing_100;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.06);
+	border-radius: 8px;
+	background: #fff;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid rgba(0,0,0,.1);
+}
+.p-day_of--header {
+	background: $light_yellow;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 $spacing_100;
+}
+.p-day_of--countdown {
+	display: flex;
+	align-items: center;
+	font-family: monospace;
+
+	& .flex {
+		justify-content: center;
+		align-items: center;
+	}
+	& h3 {
+		margin: 0;
+		font-size: 36px;
+	}
+
+	& p {
+		margin: 0;
+		font-size: 14px;
+		font-family: monospace;
+	}
+}
+.p-day_of--countdown_colon {
+	font-size: 24px;
+}
+.p-day_of--countdown_tag {
+	margin-top: $spacing_50;
+	font-size: 18px;
+	font-weight: bold;
+}
+.p-day_of--empty {
+	width: 91.2px;
+}
 .p-day_of {
 	@include max-width;
 
@@ -12,18 +64,20 @@
 .p-day_of--info {
 	display: flex;
 	padding: 0 20px;
+	align-items: flex-start;
 }
-
+.p-day_of--section_header {
+	margin: $spacing_100 0;
+}
 .p-day_of--announcements {
 	box-sizing: border-box;
-	min-height: 100%;
 	margin-right: $spacing_100;
+	padding: 0;
 }
 
 .p-day_of--announcements_holder {
-	height: 300px;
 	overflow-y: auto;
-
+	max-height: 350px;
 	padding-left: $spacing_100;
 	padding-right: $spacing_100;
 }
@@ -38,8 +92,18 @@
 }
 
 .p-day_of--hammers {
-	margin: $spacing_200;
-	height: 200px;
+	margin: $spacing_200 0;
+	height: 70px;
+}
+.p-day_of--schedule {
+	width: 100%;
+	background: #E7F5FB;
+	padding: $spacing_100 0;
+	margin-top: $spacing_200;
+}
+
+.p-day_of--footer {
+	padding: $spacing_100 0;
 }
 
 @media (max-width: 720px) {
