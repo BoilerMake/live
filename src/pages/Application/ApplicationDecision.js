@@ -4,8 +4,13 @@ import ApplicationSelectField from './ApplicationSelectField';
 import ApplicationRSVPToggle from './ApplicationRSVPToggle';
 import { dietOptions, shirtOptions, skillOptions } from './ApplicationConsts';
 import Hr from '../../components/Hr';
-
 import DecisionTransitMethod from './DecisionTransitMethod';
+import {
+  saveApplication,
+  toggleApplicationFieldValue
+} from '../../actions/application';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class ApplicationDecision extends Component {
   renderRSVPYes() {
@@ -200,12 +205,6 @@ class ApplicationDecision extends Component {
 }
 
 //now the redux integration layer
-import {
-  saveApplication,
-  toggleApplicationFieldValue
-} from '../../actions/application';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     user: state.user,

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import { fetchAnnouncements } from '../../actions/dayof';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class Announcements extends Component {
   componentDidMount() {
@@ -38,9 +41,6 @@ class Announcements extends Component {
   }
 }
 
-import { fetchAnnouncements } from '../../actions/dayof';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     dayof: state.dayof

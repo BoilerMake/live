@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
 import './_pillar.login.source.scss';
+import { loginFromJWT } from '../../actions/users';
+import { connect } from 'react-redux';
 
 class Login extends Component {
   constructor(props) {
@@ -66,8 +68,6 @@ class Login extends Component {
 }
 
 //now the redux integration layer
-import { loginFromJWT } from '../../actions/users';
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     user: state.user

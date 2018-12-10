@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
-// import { SubmissionError } from 'redux-form';
 import { Redirect } from 'react-router-dom';
-// import { toastr } from 'react-redux-toastr';
 import { Card } from 'bm-kit';
 import apiFetch from '../../actions';
+import { loginFromJWT } from '../../actions/users';
+import { connect } from 'react-redux';
+
 export class Register extends Component {
   constructor(props) {
     super(props);
@@ -68,8 +69,6 @@ export class Register extends Component {
 }
 
 //now the redux integration layer
-import { loginFromJWT } from '../../actions/users';
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     user: state.user

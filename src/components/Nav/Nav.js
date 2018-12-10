@@ -5,6 +5,7 @@ import { logoutUser } from '../../actions/users';
 import logo from '../../assets/images/bm6_hammers.svg';
 import mlh from '../../assets/images/mlh-badge-shadow.png';
 import './_pillar.nav.source.scss';
+import { connect } from 'react-redux';
 
 class Nav extends Component {
   constructor(props) {
@@ -70,12 +71,12 @@ class Nav extends Component {
                       </NavLink>
                     ) : null}
                     {user.authenticated ? (
-                      <a
+                      <Button
                         className="p-nav__dropdown_link"
                         onClick={this.props.logoutUser}
                       >
                         Logout
-                      </a>
+                      </Button>
                     ) : (
                       <NavLink
                         exact
@@ -134,9 +135,12 @@ class Nav extends Component {
                   Dashboard
                 </NavLink>
 
-                <a className="p-nav__nav_link" onClick={this.props.logoutUser}>
+                <Button
+                  className="p-nav__nav_link"
+                  onClick={this.props.logoutUser}
+                >
                   Logout
-                </a>
+                </Button>
               </span>
             ) : (
               <NavLink exact to="/login" className="p-nav__nav_link">
@@ -164,8 +168,6 @@ class Nav extends Component {
   }
 }
 
-//now the redux integration layer
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     user: state.user

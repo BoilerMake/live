@@ -1,7 +1,7 @@
 language: node_js
 cache: yarn
 node_js:
-- 6
+- 10
 install:
 - pip install --user awscli
 - yarn

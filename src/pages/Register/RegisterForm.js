@@ -62,7 +62,6 @@ class RegisterForm extends PureComponent {
         />
         {error && <div className="margint">{error}</div>}
         <Button
-          full={true}
           type="submit"
           disabled={submitting}
           onClick={() =>

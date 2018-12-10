@@ -6,6 +6,7 @@ import RequestPasswordResetForm from './RequestPasswordResetForm';
 import PerformPasswordResetForm from './PerformPasswordResetForm';
 import apiFetch from '../../actions';
 import '../../assets/_form.scss';
+import { connect } from 'react-redux';
 
 class PasswordReset extends Component {
   constructor(props) {
@@ -84,7 +85,6 @@ class PasswordReset extends Component {
 }
 
 //now the redux integration layer
-import { connect } from 'react-redux';
 function mapStateToProps(state) {
   return {
     user: state.user
