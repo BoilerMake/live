@@ -17,6 +17,7 @@ export default class MailChimpSignup extends PureComponent {
         >
           <label htmlFor="mce-EMAIL" className="p-mail_chimp_signup__label">
             BoilerMake is returning for the 2019-2020 hackathon season!
+            <br />
             Interested in updates?
           </label>
           <div
